@@ -1,4 +1,4 @@
-import droolsEvaluation.Where
+import droolsEvaluation.Main
 
 rule "indoor"
 
