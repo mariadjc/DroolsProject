@@ -1,4 +1,4 @@
-import pojos.application
+import droolsEvaluation.Location
 
 rule "indoor"
 
