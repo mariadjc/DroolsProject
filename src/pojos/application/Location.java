@@ -12,7 +12,7 @@ public class Location implements Serializable{
 
 	private Integer id;
 	private String place;
-	private Vehicle Vehicle;
+	private Vehicle vehicle;
     public enum Vehicle {AMBULANCE,HELICOPTER,BOAT};
 
 	
@@ -20,13 +20,13 @@ public class Location implements Serializable{
 		super();
 		this.id = id;
 		this.place = place;
-		this.Vehicle = Vehicle.AMBULANCE;
+		this.vehicle = Vehicle.AMBULANCE;
 	}
 	
 	public Location(String place, Vehicle Vehicle) {
 		super();
 		this.place = place;
-		this.Vehicle = Vehicle.AMBULANCE;
+		this.vehicle = Vehicle.AMBULANCE;
 	}
 
 	public Location(String place) {
@@ -50,11 +50,11 @@ public class Location implements Serializable{
 	}
 
 	public Vehicle getVehicle() {
-		return Vehicle;
+		return vehicle;
 	}
 
-	public void setVehicle(Vehicle Vehicle) {
-		this.Vehicle = Vehicle;
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
 	}
 
 
@@ -77,7 +77,7 @@ public class Location implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Where [id=" + id + ", place=" + place + ", Vehicle=" + Vehicle + "]";
+		return "Where [id=" + id + ", place=" + place + ", vehicle=" + vehicle + "]";
 	}
 	
 	
