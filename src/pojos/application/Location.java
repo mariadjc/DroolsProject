@@ -3,7 +3,7 @@ package pojos.application;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Where implements Serializable{
+public class Location implements Serializable{
 
 	/**
 	 * 
@@ -12,24 +12,24 @@ public class Where implements Serializable{
 
 	private Integer id;
 	private String place;
-	private Vehicule vehicule;
-    public enum Vehicule {AMBULANCE,HELICOPTER,BOAT};
+	private Vehicle Vehicle;
+    public enum Vehicle {AMBULANCE,HELICOPTER,BOAT};
 
 	
-	public Where(Integer id, String place, Vehicule vehicule) {
+	public Location(Integer id, String place, Vehicle Vehicle) {
 		super();
 		this.id = id;
 		this.place = place;
-		this.vehicule = vehicule;
+		this.Vehicle = Vehicle.AMBULANCE;
 	}
 	
-	public Where(String place, Vehicule vehicule) {
+	public Location(String place, Vehicle Vehicle) {
 		super();
 		this.place = place;
-		this.vehicule = vehicule;
+		this.Vehicle = Vehicle.AMBULANCE;
 	}
 
-	public Where(String place) {
+	public Location(String place) {
 		super();
 		this.place = place;
 	}
@@ -49,12 +49,12 @@ public class Where implements Serializable{
 		this.place = place;
 	}
 
-	public Vehicule getVehicule() {
-		return vehicule;
+	public Vehicle getVehicle() {
+		return Vehicle;
 	}
 
-	public void setVehicule(Vehicule vehicule) {
-		this.vehicule = vehicule;
+	public void setVehicle(Vehicle Vehicle) {
+		this.Vehicle = Vehicle;
 	}
 
 
@@ -71,13 +71,13 @@ public class Where implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Where other = (Where) obj;
+		Location other = (Location) obj;
 		return Objects.equals(id, other.id);
 	}
 
 	@Override
 	public String toString() {
-		return "Where [id=" + id + ", place=" + place + ", vehicule=" + vehicule + "]";
+		return "Where [id=" + id + ", place=" + place + ", Vehicle=" + Vehicle + "]";
 	}
 	
 	

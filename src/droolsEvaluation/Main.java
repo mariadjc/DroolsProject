@@ -18,20 +18,20 @@ public class Main {
         KieServices ks = KieServices.Factory.get();
         KieContainer kc = ks.getKieClasspathContainer();
 
-        KieSession ksession = kc.newKieSession("evaluationKS");
+        KieSession ksession = kc.newKieSession("vechicleKS");
         
-        Urgency u1 = new Urgency();
-        Where w1 = new Where("Indoors");
+        //Urgency u1 = new Urgency();
+        Location w1 = new Location("Indoors");
         
-        Patient p1 = new Patient(1);
-        Patient p2 = new Patient(2);
+        //Patient p1 = new Patient(1);
+        //Patient p2 = new Patient(2);
         
         /*Patient p2 = new Patient(2);
         Patient p3 = new Patient(3);
         Patient p4 = new Patient(4);
         Patient p5 = new Patient(5);*/
         
-        Symptom s1 = new Symptom ("chest pressure");
+        //Symptom s1 = new Symptom ("chest pressure");
         
         System.out.println(w1);
         

@@ -1,12 +1,12 @@
-import droolsEvaluation.Main
+import pojos.application
 
 rule "indoor"
 
     dialect "java"
     when
-        w1 : Where (place.equals("Indoors"))
+        w1 : Location (place.equals("Indoors"))
     then 
-        w1.setVehicule(Where.Vehicule.AMBULANCE);
+        w1.setVehicle(Location.Vehicle.AMBULANCE);
         System.out.println("Rule indoor applied over " + w1);
         System.out.println("Vehicle display indoors is " + w1);
 end
