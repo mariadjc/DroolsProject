@@ -17,6 +17,10 @@
        <ksession name="evaluationKS"/>
    </kbase>
  
+   <kbase name="test" packages="java.rules.examples.vehicle">
+       <ksession name="vehicleKS"/>
+   </kbase>
+ 
  
  
  
