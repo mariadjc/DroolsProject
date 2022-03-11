@@ -13,10 +13,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         KieServices ks = KieServices.Factory.get();
         KieContainer kc = ks.getKieClasspathContainer();
+        
+        execute(ks, kc);
+    }
 
+    public static void execute(KieServices ks, KieContainer kc) {
+    
         KieSession ksession = kc.newKieSession("vechicleKS");
         
         //Urgency u1 = new Urgency();
@@ -62,9 +66,8 @@ public class Main {
         System.out.println(w5);
         
         ksession.dispose();
-        
-     
     
-        
     }
+
+    
 }
