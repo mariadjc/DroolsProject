@@ -23,7 +23,6 @@ public class Main {
     
         KieSession ksession = kc.newKieSession("vechicleKS");
         
-        //Urgency u1 = new Urgency();
         Location w1 = new Location("Home");
         Location w2 = new Location("Transit");
         Location w3 = new Location("Work place");

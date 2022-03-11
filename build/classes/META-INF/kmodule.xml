@@ -17,11 +17,14 @@
        <ksession name="evaluationKS"/>
    </kbase>
    
-   <kbase name="vehicle" packages="java.rules.vehicles">
+   <kbase name="vehicle" packages="java.rules.application">
        <ksession name="vechicleKS"/>
    </kbase>
- 
- 
+   
+   <kbase name="symptoms" packages="java.rules.application">
+       <ksession name="specialityKS"/>
+   </kbase>
+   
  
  
     

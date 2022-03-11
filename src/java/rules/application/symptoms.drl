@@ -1,0 +1,11 @@
+import drools.symptoms
+
+rule "heart attack"
+
+    dialect "java"
+    when
+        s1 : Symptom (symptom.equals("Chest pain"))
+    then 
+        s1.___________;
+        System.out.println("Rule heart attack applied over " + s1);
+end
