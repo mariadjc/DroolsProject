@@ -1,16 +1,54 @@
-import droolsEvaluation.Location
+import drools.displayVehicle.Location
 
-rule "indoor"
+rule "home"
 
     dialect "java"
     when
-        w1 : Location (place.equals("Indoors"))
+        w1 : Location (place.equals("Home"))
     then 
         w1.setVehicle(Location.Vehicle.AMBULANCE);
-        System.out.println("Rule indoor applied over " + w1);
-        System.out.println("Vehicle display indoors is " + w1);
+        System.out.println("Rule home applied over " + w1);
 end
 
+rule "transit"
+
+    dialect "java"
+    when
+        w2 : Location (place.equals("Transit"))
+    then 
+        w2.setVehicle(Location.Vehicle.AMBULANCE);
+        System.out.println("Rule transit applied over " + w2);
+end
+
+rule "at work"
+
+    dialect "java"
+    when
+        w3 : Location (place.equals("Work place"))
+    then 
+        w3.setVehicle(Location.Vehicle.AMBULANCE);
+        System.out.println("Rule at work applied over " + w3);
+end
+
+rule "mountain"
+
+    dialect "java"
+    when
+        w4 : Location (place.equals("Mountain"))
+    then 
+        w4.setVehicle(Location.Vehicle.HELICOPTER);
+        System.out.println("Rule mountain applied over " + w4);
+end
+
+rule "at the beach"
+
+    dialect "java"
+    when
+        w5 : Location (place.equals("Beach"))
+    then 
+        w5.setVehicle(Location.Vehicle.BOAT);
+        System.out.println("Rule at the beach applied over " + w5);
+end
 
 
 

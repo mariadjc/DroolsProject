@@ -1,4 +1,4 @@
-package droolsEvaluation;
+package drools.displayVehicle;
 
 import java.io.Serializable;
 import java.util.Objects;
