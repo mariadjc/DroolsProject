@@ -21,12 +21,9 @@
        <ksession name="vechicleKS"/>
    </kbase>
    
-   <kbase name="symptoms" packages="java.rules.application">
-       <ksession name="specialityKS"/>
+ 	<kbase name="symptom" packages="java.rules.application">
+       <ksession name="symptomsKS"/>
    </kbase>
-   
- 
- 
     
 </kmodule>
 

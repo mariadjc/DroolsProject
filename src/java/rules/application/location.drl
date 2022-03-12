@@ -1,4 +1,7 @@
 import drools.displayVehicle.Location
+import drools.displayVehicle.Protocol
+import drools.displayVehicle.Emergency
+
 
 rule "home"
 
@@ -51,4 +54,36 @@ rule "at the beach"
 end
 
 
+/*
+rule "protocol needs vehicle"
+
+    dialect "java"
+    when
+        u : Emergency (protocol.equals(Protocol.Type.SHIPMENT))
+    then 
+        u.setLocation(Location.setVehicle(Location.Vehicle.AMBULANCE));
+        System.out.println("Rule 'protocol needs ambulance' applied over " + u);
+end
+
+rule "on-site protocol"
+
+    dialect "java"
+    when
+        u : Emergency (protocol.equals(Protocol.Type.INPLACE))
+    then 
+        u.setLocation(Location.setVehicle(Location.Vehicle.AMBULANCE));
+        System.out.println("Rule 'protocol needs ambulance' applied over " + u);
+end
+
+rule "no transport protocol"
+
+    dialect "java"
+    when
+        u : Emergency (protocol.equals(Protocol.Type.ADVICE))
+    then 
+        u.setLocation(Location.setVehicle(Location.Vehicle.AMBULANCE));
+        System.out.println("Rule 'protocol needs ambulance' applied over " + u);
+end
+
+*/
 

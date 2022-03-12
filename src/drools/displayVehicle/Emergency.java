@@ -1,11 +1,11 @@
-package pojos.application;
+package drools.displayVehicle;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-public class Urgency implements Serializable {
+public class Emergency implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -16,15 +16,15 @@ public class Urgency implements Serializable {
 	private String direction;
 	private Protocol protocol;
 	private Location location;
-	private Speciality speciality;
+	//private Speciality speciality;
 	
-	public Urgency() {
+	public Emergency() {
 		super();
 		this.date = setDate();
 		this.code = setCode();
 	}
 	
-	public Urgency(Integer id) {
+	public Emergency(Integer id) {
 		super();
 		this.id = id;
 		this.date = setDate();
@@ -32,7 +32,7 @@ public class Urgency implements Serializable {
 	}
 	
 	
-	public Urgency(Integer id, Integer code, String date, Integer severity) {
+	public Emergency(Integer id, Integer code, String date, Integer severity) {
 		super();
 		this.id = id;
 		this.code = code;
@@ -56,6 +56,7 @@ public class Urgency implements Serializable {
 		this.location = location;
 	}
 
+/*
 	public Speciality getSpeciality() {
 		return speciality;
 	}
@@ -63,7 +64,7 @@ public class Urgency implements Serializable {
 	public void setSpeciality(Speciality speciality) {
 		this.speciality = speciality;
 	}
-
+*/
 	public Integer getSeverity() {
 		return severity;
 	}
@@ -113,13 +114,13 @@ public class Urgency implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Urgency other = (Urgency) obj;
+		Emergency other = (Emergency) obj;
 		return Objects.equals(id, other.id);
 	}
 
 	@Override
 	public String toString() {
-		return "Urgency [id=" + id + ", code=" + code + ", date=" + date + ", severity=" + severity + ", direction="
+		return "Emergency [id=" + id + ", code=" + code + ", date=" + date + ", severity=" + severity + ", direction="
 				+ direction + ", protocol=" + protocol + "]";
 	}
 	

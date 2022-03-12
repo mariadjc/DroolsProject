@@ -1,28 +1,28 @@
-package drools.symptoms;
+package pojos.application;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Speciality implements Serializable{
+public class Specialty implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
-	private String speciality;
+	private String name;
+	private Disease disease;
 	
-	public Speciality(String speciality) {
+	public Specialty(String name) {
 		super();
-		this.speciality = speciality;
+		this.name = name;
 	}
 	
-	public Speciality(Integer id, String speciality) {
+	public Specialty(Integer id, String name) {
 		super();
 		this.id = id;
-		this.speciality = speciality;
+		this.name = name;
 	}
+	
+	
 
 	public Integer getId() {
 		return id;
@@ -32,12 +32,20 @@ public class Speciality implements Serializable{
 		this.id = id;
 	}
 
-	public String getSpeciality() {
-		return speciality;
+	public String getname() {
+		return name;
 	}
 	
-	public void setSpeciality(String speciality) {
-		this.speciality = speciality;
+	public void setname(String name) {
+		this.name = name;
+	}
+
+	public Disease getDisease() {
+		return disease;
+	}
+
+	public void setDisease(Disease disease) {
+		this.disease = disease;
 	}
 
 	@Override
@@ -53,14 +61,16 @@ public class Speciality implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Speciality other = (Speciality) obj;
+		Specialty other = (Specialty) obj;
 		return Objects.equals(id, other.id);
 	}
 
 	@Override
 	public String toString() {
-		return "Speciality [id=" + id + ", speciality=" + speciality + "]";
+		return "Specialty [id=" + id + ", name=" + name + ", disease=" + disease + "]";
 	}
+
+	
 	
 	
 

@@ -12,6 +12,8 @@ public class Disease implements Serializable{
 	
 	private Integer id;
 	private String disease;
+	public enum Symptoms {CHEST_PRESSURE,FATIGUE,PAIN_EXTENDS_TO_LEFT_ARM,DISNEA,COLD_SWEAT};
+	private Symptoms symptoms;
 	
 	public Disease(String disease) {
 		super();
@@ -32,6 +34,14 @@ public class Disease implements Serializable{
 
 	public void setDisease(String disease) {
 		this.disease = disease;
+	}
+
+	public Symptoms getSymptoms() {
+		return symptoms;
+	}
+
+	public void setSymptoms(Symptoms symptoms) {
+		this.symptoms = symptoms;
 	}
 
 	@Override

@@ -77,7 +77,7 @@ public class Location implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Where [id=" + id + ", place=" + place + ", vehicle=" + vehicle + "]";
+		return "Location [id=" + id + ", place=" + place + ", vehicle=" + vehicle + "]";
 	}
 	
 	

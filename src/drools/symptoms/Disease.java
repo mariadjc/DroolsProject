@@ -1,6 +1,8 @@
 package drools.symptoms;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Disease implements Serializable{
@@ -12,12 +14,20 @@ public class Disease implements Serializable{
 	
 	private Integer id;
 	private String disease;
+	private Integer severity_case;
+	private List<String> symptomsList = new ArrayList<String>();
 	
 	public Disease(String disease) {
 		super();
 		this.disease = disease;
 	}
 
+	public Disease(Integer id, String disease) {
+		super();
+		this.id = id;
+		this.disease = disease;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -32,6 +42,22 @@ public class Disease implements Serializable{
 
 	public void setDisease(String disease) {
 		this.disease = disease;
+	}
+
+	public List<String> getSymptomsList() {
+		return symptomsList;
+	}
+
+	public void setSymptomsList(List<String> symptomsList) {
+		this.symptomsList = symptomsList;
+	}
+
+	public Integer getSeverity_case() {
+		return severity_case;
+	}
+
+	public void setSeverity_case(Integer severity_case) {
+		this.severity_case = severity_case;
 	}
 
 	@Override
@@ -53,8 +79,10 @@ public class Disease implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Disease [id=" + id + ", disease=" + disease + "]";
+		return "Disease [id=" + id + ", disease=" + disease + ", severity_case=" + severity_case + ", symptomsList="
+				+ symptomsList + "]";
 	}
+
 	
 	
 

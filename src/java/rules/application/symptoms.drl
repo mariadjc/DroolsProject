@@ -1,11 +1,131 @@
-import drools.symptoms
+import drools.symptoms.Specialty
 
-rule "heart attack"
 
-    dialect "java"
-    when
-        s1 : Symptom (symptom.equals("Chest pain"))
-    then 
-        s1.___________;
-        System.out.println("Rule heart attack applied over " + s1);
+							// CARDIOLOGY
+
+rule "cardiology_heart_attack"
+	dialect "java"
+	when
+		sp1: Specialty (disease_list.get(0).getDisease().equals("Heart attack"))
+	then
+		sp1.disease_list.get(0).setSeverity_case(1);
+		//System.out.println("Rule 'cardiology_heart_attack' applied over " + sp1);
 end
+
+rule "cardiology_heart_failure"
+	dialect "java"
+	when
+		sp1: Specialty (disease_list.get(1).getDisease().equals("Heart failure"))
+	then
+		sp1.disease_list.get(1).setSeverity_case(2);
+		//System.out.println("Rule 'cardiology_heart_failure' applied over " + sp1);
+end
+
+							// TOXICOLOGY
+
+							// NEUROLOGY
+
+							// TRAUMATOLOGY
+							
+							// ONCOLOGY
+							
+rule "oncology_colon_cancer_light"
+	dialect "java"
+	when
+		sp5: Specialty (disease_list.get(0).getDisease().equals("Colon cancer"))
+	then
+		sp5.disease_list.get(0).setSeverity_case(4);
+end
+
+rule "oncology_colon_cancer_severe"
+	dialect "java"
+	when
+		sp5: Specialty (disease_list.get(1).getDisease().equals("Colon cancer"))
+	then
+		sp5.disease_list.get(1).setSeverity_case(1);
+end
+
+rule "oncology_prostate_cancer_light"
+	dialect "java"
+	when
+		sp5: Specialty (disease_list.get(2).getDisease().equals("Prostate cancer"))
+	then
+		sp5.disease_list.get(2).setSeverity_case(3);
+end
+
+rule "oncology_prostate_cancer_severe"
+	dialect "java"
+	when
+		sp5: Specialty (disease_list.get(3).getDisease().equals("Prostate cancer"))
+	then
+		sp5.disease_list.get(3).setSeverity_case(2);
+end
+
+
+rule "oncology_lung_cancer_light"
+	dialect "java"
+	when
+		sp5: Specialty (disease_list.get(4).getDisease().equals("Lung cancer"))
+	then
+		sp5.disease_list.get(4).setSeverity_case(3);
+end
+
+rule "oncology_lung_cancer_severe"
+	dialect "java"
+	when
+		sp5: Specialty (disease_list.get(5).getDisease().equals("Lung cancer"))
+	then
+		sp5.disease_list.get(5).setSeverity_case(2);
+end
+
+rule "oncology_breast_cancer_light"
+	dialect "java"
+	when
+		sp5: Specialty (disease_list.get(6).getDisease().equals("Breast cancer"))
+	then
+		sp5.disease_list.get(6).setSeverity_case(5);
+end
+
+rule "oncology_breast_cancer_severe"
+	dialect "java"
+	when
+		sp5: Specialty (disease_list.get(7).getDisease().equals("Breast cancer"))
+	then
+		sp5.disease_list.get(7).setSeverity_case(1);
+end
+
+rule "oncology_leukemia_severe"
+	dialect "java"
+	when
+		sp5: Specialty (disease_list.get(8).getDisease().equals("Leukemia"))
+	then
+		sp5.disease_list.get(8).setSeverity_case(1);
+end
+
+rule "oncology_leukemia_light"
+	dialect "java"
+	when
+		sp5: Specialty (disease_list.get(9).getDisease().equals("Leukemia"))
+	then
+		sp5.disease_list.get(9).setSeverity_case(4);
+end
+
+
+							// OTHER
+
+rule "other_unknown_light"
+	dialect "java"
+	when
+		sp6: Specialty (disease_list.get(0).getDisease().equals("Other"))
+	then
+		sp6.disease_list.get(0).setSeverity_case(5);
+end		
+
+rule "other_unknown_severe"
+	dialect "java"
+	when
+		sp6: Specialty (disease_list.get(1).getDisease().equals("Other"))
+	then
+		sp6.disease_list.get(1).setSeverity_case(4);
+end												
+							
