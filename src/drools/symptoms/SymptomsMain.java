@@ -61,8 +61,7 @@ public class SymptomsMain {
         Location w3 = new Location(2,"Work place");
         Location w4 = new Location(3,"Mountain");
         Location w5 = new Location(4,"Beach");
-        u.setLocation(w1);
-        
+        u.setLocation(w5);
 		
 		Specialty sp1 = new Specialty(0,"Cardiology");
 		Specialty sp2 = new Specialty(1,"Toxicology");
@@ -250,13 +249,13 @@ public class SymptomsMain {
 		
 	// STEPS
 	// 1. WE SPECIFY THE SPECIALITY
-		u.setSpecialty(sp2);
+		u.setSpecialty(sp5);
 		
 	// 2. WE SPECIFY THE SYMPTOMS OF THIS CASE (NOT THE OVERALL FROM ABOVE)
 		// In this case I will choose the ones from 'onco_symptoms_list5_2' that correspond to index 9 of the disease_list
 		
 		
-		Disease select = sp2.getDisease_list().get(0);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
+		Disease select = sp5.getDisease_list().get(0);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
 		u.setDisease(select);
 		
 		System.out.println("BEFORE\n" +  u);

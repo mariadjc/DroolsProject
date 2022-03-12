@@ -1,6 +1,7 @@
 import drools.symptoms.Emergency
 import drools.symptoms.Protocol
 import drools.symptoms.Location
+import drools.symptoms.Specialty
 
 
 							// CARDIOLOGY
