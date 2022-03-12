@@ -18,7 +18,7 @@ public class Emergency implements Serializable {
 	private String direction;
 	private List<Protocol> protocol_list = new ArrayList<>();
 	public Protocol protocol;
-	private Location location;
+	public Location location;
 	private Patient patient;
 	public Specialty specialty;
 	private Disease disease;
