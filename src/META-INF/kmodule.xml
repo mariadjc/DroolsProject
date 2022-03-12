@@ -3,7 +3,7 @@
          xmlns="http://www.drools.org/xsd/kmodule">
    
 	  
-	  <kbase name="vehicle" packages="java.rules.application">
+	  <kbase name="vehicles" packages="java.rules.application">
 	      <ksession name="vechicleKS"/>
 	  </kbase>
 	  

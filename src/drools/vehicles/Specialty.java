@@ -1,6 +1,8 @@
-package pojos.application;
+package drools.vehicles;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Specialty implements Serializable{
@@ -9,7 +11,7 @@ public class Specialty implements Serializable{
 	
 	private Integer id;
 	private String name;
-	private Disease disease;
+	public List<Disease> disease_list = new ArrayList<>();
 	
 	public Specialty(String name) {
 		super();
@@ -32,20 +34,20 @@ public class Specialty implements Serializable{
 		this.id = id;
 	}
 
-	public String getname() {
+	public String getName() {
 		return name;
 	}
 	
-	public void setname(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public Disease getDisease() {
-		return disease;
+	public List<Disease> getDisease_list() {
+		return disease_list;
 	}
 
-	public void setDisease(Disease disease) {
-		this.disease = disease;
+	public void setDisease_list(List<Disease> disease_list) {
+		this.disease_list = disease_list;
 	}
 
 	@Override
@@ -67,7 +69,7 @@ public class Specialty implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Specialty [id=" + id + ", name=" + name + ", disease=" + disease + "]";
+		return "Specialty [id=" + id + ", name=" + name + "]";
 	}
 
 	

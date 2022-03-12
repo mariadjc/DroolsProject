@@ -1,4 +1,4 @@
-package pojos.application;
+package drools.vehicles;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -29,8 +29,9 @@ public class Location implements Serializable{
 		this.vehicle = Vehicle.AMBULANCE;
 	}
 
-	public Location(String place) {
+	public Location(Integer id, String place) {
 		super();
+		this.id = id;
 		this.place = place;
 	}
 	public Integer getId() {
@@ -77,7 +78,7 @@ public class Location implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Where [id=" + id + ", place=" + place + ", vehicle=" + vehicle + "]";
+		return "Location [id=" + id + ", place=" + place + ", vehicle=" + vehicle + "]";
 	}
 	
 	

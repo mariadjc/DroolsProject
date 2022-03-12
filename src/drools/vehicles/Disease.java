@@ -1,6 +1,8 @@
-package pojos.application;
+package drools.vehicles;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Disease implements Serializable{
@@ -12,14 +14,19 @@ public class Disease implements Serializable{
 	
 	private Integer id;
 	private String disease;
-	public enum Symptoms {CHEST_PRESSURE,FATIGUE,PAIN_EXTENDS_TO_LEFT_ARM,DISNEA,COLD_SWEAT};
-	private Symptoms symptoms;
+	private List<String> symptomsList = new ArrayList<String>();
 	
 	public Disease(String disease) {
 		super();
 		this.disease = disease;
 	}
 
+	public Disease(Integer id, String disease) {
+		super();
+		this.id = id;
+		this.disease = disease;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -36,12 +43,12 @@ public class Disease implements Serializable{
 		this.disease = disease;
 	}
 
-	public Symptoms getSymptoms() {
-		return symptoms;
+	public List<String> getSymptomsList() {
+		return symptomsList;
 	}
 
-	public void setSymptoms(Symptoms symptoms) {
-		this.symptoms = symptoms;
+	public void setSymptomsList(List<String> symptomsList) {
+		this.symptomsList = symptomsList;
 	}
 
 	@Override
@@ -63,8 +70,12 @@ public class Disease implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Disease [id=" + id + ", disease=" + disease + "]";
+		return "Disease [id=" + id + ", disease=" + disease + ", symptomsList="
+				+ symptomsList + "]";
 	}
+
+	
+
 	
 	
 

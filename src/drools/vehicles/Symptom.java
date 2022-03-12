@@ -1,13 +1,10 @@
-package pojos.application;
+package drools.vehicles;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 public class Symptom implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;

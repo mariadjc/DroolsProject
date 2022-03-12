@@ -1,12 +1,9 @@
-package drools.symptoms;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package drools.vehicles;
 
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
+
 
 public class DisplayVehicle {
 
@@ -38,7 +35,9 @@ public class DisplayVehicle {
         Location w4 = new Location(3,"Mountain");
         Location w5 = new Location(4,"Beach");
          
-        Emergency u = new Emergency();
+        Emergency2 u = new Emergency2();
+        
+        /*
         Specialty sp5 = new Specialty(0,"Oncology");
         Protocol prot = new Protocol(0,"info");
         	u.setId(0);
@@ -46,14 +45,13 @@ public class DisplayVehicle {
 	        u.setProtocol(prot);
 	        u.setSeverity(3);
 	        u.setSpecialty(sp5);
+	        
+	     */
         Patient p = new Patient("John","Tudor","Male", "Child", true,false,"23355");
 			p.setId(0);
 			u.setPatient(p);
         
-		//u.setLocation(w4);
-		
-		
-		
+		u.setLocation(w4);
 		
 		
 		

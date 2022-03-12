@@ -82,8 +82,8 @@ public class SymptomsMain {
 		List<Disease> onco_diseases = new ArrayList<>();
 		Disease onco1_1 = new Disease(0,"Colon cancer");
 		Disease onco1_2 = new Disease(1,"Colon cancer");
-		Disease onco2_1 = new Disease(2,"Prostate_cancer");
-		Disease onco2_2 = new Disease(3,"Prostate_cancer");
+		Disease onco2_1 = new Disease(2,"Prostate cancer");
+		Disease onco2_2 = new Disease(3,"Prostate cancer");
 		Disease onco3_1 = new Disease(4,"Lung cancer");
 		Disease onco3_2 = new Disease(5,"Lung cancer");
 		Disease onco4_1 = new Disease(6,"Breast cancer");
@@ -97,7 +97,7 @@ public class SymptomsMain {
 		
 		List<Disease> toxic_diseases = new ArrayList<>();
 		Disease tox1 = new Disease(0,"Food Poisoning");
-		
+		Disease tox2 = new Disease(1,"Drugs");
 		//Include here more diseases in a lists of correspondent specialities
 
 		
@@ -129,12 +129,19 @@ public class SymptomsMain {
 		
 		
 		// TOXICOLOGY
-		String tox_symp_1 = "Fever/Chills/Diarrhea/Pain/Nausea/Headache/Heart rate acceleration/Skin redness/Vomits/Paralysis/";
+		String tox_symp_1 = "Fever/Chills/Diarrhea/Pain/Nausea/Headache/Heart rate acceleration/Skin redness/Vomits/Paralysis";
 		List<String> tox_list_1 = Arrays.asList(tox_symp_1.split("/"));
 		List<String> tox_symptoms_list1 =  new ArrayList<String>(tox_list_1); 
 		
+		String tox_symp_2 = "Negative Mood/Vomits/Hyperactivity/Phlegmaticy/Reddened Sclera";
+		List<String> tox_list_2 = Arrays.asList(tox_symp_2.split("/"));
+		List<String> tox_symptoms_list2 =  new ArrayList<String>(tox_list_2); 
+		
+		
 		tox1.setSymptomsList(tox_symptoms_list1);
 			toxic_diseases.add(tox1);
+		tox2.setSymptomsList(tox_symptoms_list2);
+			toxic_diseases.add(tox2);
 
 		sp2.setDisease_list(toxic_diseases);
 			
@@ -231,9 +238,9 @@ public class SymptomsMain {
 		List<String> other_symptoms_list2 =  new ArrayList<String>(other_list_2); 
 		
 		other1.setSymptomsList(other_symptoms_list1);
-			other_diseases.add(cardio1);
+			other_diseases.add(other1);
 		other2.setSymptomsList(other_symptoms_list2);
-			other_diseases.add(cardio2);
+			other_diseases.add(other2);
 		
 		sp6.setDisease_list(other_diseases);
 		
@@ -249,14 +256,15 @@ public class SymptomsMain {
 		
 	// STEPS
 	// 1. WE SPECIFY THE SPECIALITY
-		u.setSpecialty(sp5);
+		u.setSpecialty(sp2);
 		
 	// 2. WE SPECIFY THE SYMPTOMS OF THIS CASE (NOT THE OVERALL FROM ABOVE)
 		// In this case I will choose the ones from 'onco_symptoms_list5_2' that correspond to index 9 of the disease_list
 		
 		
-		Disease select = sp5.getDisease_list().get(0);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
+		Disease select = sp2.getDisease_list().get(0);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
 		u.setDisease(select);
+		
 		
 		System.out.println("BEFORE\n" +  u);
 		
