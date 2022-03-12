@@ -32,7 +32,7 @@ end
 rule "food_poisoning"
 	dialect "java"
 	when
-		u: Emergency (specialty.getDisease_list().get(0).getDisease().equals("Food Poisoning"))
+		u: Emergency (specialty.equals("Toxicology") && specialty.getDisease_list().get(0).getDisease().equals("Food Poisoning"))
 	then
 		u.setSeverity(1);
 		u.setProtocol(u.getProtocol_list().get(6));
