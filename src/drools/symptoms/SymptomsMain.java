@@ -42,6 +42,7 @@ public class SymptomsMain {
 		Protocol p4 = new Protocol(3,"Connect to oxygen supply + Inject subcutaneous antipyretic medication",Protocol.Type.SHIPMENT);
 		Protocol p5 = new Protocol(4,"Make appointment with doctor for further evaluation + Take medication and consider changes in status",Protocol.Type.ADVICE);
 		Protocol p6 = new Protocol(5,"Connect catheter + intravenous antifluid and pain medicaments",Protocol.Type.INPLACE);
+		Protocol p7 = new Protocol(6, "Connect to oxygen supply + Control vomits + If the person begins to have seizures, administer first aid for these cases",Protocol.Type.SHIPMENT);
 		//Include here more protocols from excel `add them to the correspondent list
 		
 		
@@ -52,6 +53,7 @@ public class SymptomsMain {
 		protocol_list.add(p4);
 		protocol_list.add(p5);
 		protocol_list.add(p6);
+		protocol_list.add(p7);
 		u.setProtocol_list(protocol_list);
 
 		Location w1 = new Location(0,"Home");
@@ -94,6 +96,8 @@ public class SymptomsMain {
 		Disease other1 = new Disease(0,"Unknown (not urgent)");
 		Disease other2 = new Disease(1,"Unknown (urgent)");
 		
+		List<Disease> toxic_diseases = new ArrayList<>();
+		Disease tox1 = new Disease(0,"Food Poisoning");
 		
 		//Include here more diseases in a lists of correspondent specialities
 
@@ -119,12 +123,22 @@ public class SymptomsMain {
 			cardio_diseases.add(cardio3);
 			cardio_diseases.add(cardio4);
 			cardio_diseases.add(cardio5);
+			
+		sp1.setDisease_list(cardio_diseases);
 		
 		//sp1.getDisease_list().get(0);  //---> Corresponds to heart attack
 		
 		
 		// TOXICOLOGY
+		String tox_symp_1 = "Fever/Chills/Diarrhea/Pain/Nausea/Headache/Heart rate acceleration/Skin redness/Vomits/Paralysis/";
+		List<String> tox_list_1 = Arrays.asList(tox_symp_1.split("/"));
+		List<String> tox_symptoms_list1 =  new ArrayList<String>(tox_list_1); 
+		
+		tox1.setSymptomsList(tox_symptoms_list1);
+			toxic_diseases.add(tox1);
 
+		sp2.setDisease_list(toxic_diseases);
+			
 		// NEUROLOGY
 
 		// TRAUMATOLOGY
@@ -236,13 +250,16 @@ public class SymptomsMain {
 		
 	// STEPS
 	// 1. WE SPECIFY THE SPECIALITY
-		u.setSpecialty(sp5);
+		u.setSpecialty(sp2);
 		
 	// 2. WE SPECIFY THE SYMPTOMS OF THIS CASE (NOT THE OVERALL FROM ABOVE)
 		// In this case I will choose the ones from 'onco_symptoms_list5_2' that correspond to index 9 of the disease_list
 		
-		Disease select = sp5.getDisease_list().get(9);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
+		
+		Disease select = sp2.getDisease_list().get(0);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
 		u.setDisease(select);
+		
+		System.out.println("BEFORE\n" +  u);
 		
 		ksession.insert(u);
 		

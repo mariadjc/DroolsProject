@@ -8,9 +8,6 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
-import drools.symptoms.Disease;
-import drools.symptoms.Specialty;
-
 public class DisplayVehicle {
 
 	/*
@@ -53,7 +50,7 @@ public class DisplayVehicle {
 			p.setId(0);
 			u.setPatient(p);
         
-		u.setLocation(w4);
+		//u.setLocation(w4);
 		
 		
 		
