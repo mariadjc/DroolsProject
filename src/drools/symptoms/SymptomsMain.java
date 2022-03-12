@@ -30,6 +30,11 @@ public class SymptomsMain {
 			p.setId(0);
 		u.setPatient(p);
 		
+		/*
+		 * 
+		 * REMEMBER: The following objects in the App will be added automatically from Database
+		 * 
+		 * */
 		
 		Protocol p1 = new Protocol(0,"Go to Urgencies unit for valoration",Protocol.Type.SHIPMENT);
 		Protocol p2 = new Protocol(1,"Connect to oxygen supply",Protocol.Type.INPLACE);
@@ -37,6 +42,8 @@ public class SymptomsMain {
 		Protocol p4 = new Protocol(3,"Connect to oxygen supply + Inject subcutaneous antipyretic medication",Protocol.Type.SHIPMENT);
 		Protocol p5 = new Protocol(4,"Make appointment with doctor for further evaluation + Take medication and consider changes in status",Protocol.Type.ADVICE);
 		Protocol p6 = new Protocol(5,"Connect catheter + intravenous antifluid and pain medicaments",Protocol.Type.INPLACE);
+		//Include here more protocols from excel `add them to the correspondent list
+		
 		
 		List<Protocol> protocol_list = new ArrayList<>();
 		protocol_list.add(p1);
@@ -88,6 +95,11 @@ public class SymptomsMain {
 		Disease other2 = new Disease(1,"Unknown (urgent)");
 		
 		
+		//Include here more diseases in a lists of correspondent specialities
+
+		
+		
+		// NOW   --------->  CREATE LISTS OF SYMPTOMS (SYMPLIFY IT TO THE MAXIMUM)
 			
 		// CARDIOLOGY
 
@@ -219,10 +231,7 @@ public class SymptomsMain {
 		Collections.sort(list_1);
 		Collections.sort(symptoms_list);
 		System.out.println(list_1.equals(symptoms_list));
-	*/
-		
-		//System.out.println("BEFORE\n" + sp5.getDisease_list().get(0) + "\n\n");
-		
+	*/		
 		
 		
 	// STEPS
@@ -238,7 +247,7 @@ public class SymptomsMain {
 		ksession.insert(u);
 		
 		ksession.fireAllRules();
-		//System.out.println("AFTER\n" +  sp5.getDisease_list().get(0));
+
 		System.out.println("AFTER\n" +  u);
 		
 		ksession.dispose();
