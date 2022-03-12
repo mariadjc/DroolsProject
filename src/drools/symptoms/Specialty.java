@@ -69,7 +69,7 @@ public class Specialty implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Specialty [id=" + id + ", name=" + name + ", disease_list =" + disease_list + "]";
+		return "Specialty [id=" + id + ", name=" + name + "]";
 	}
 
 	

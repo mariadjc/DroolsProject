@@ -1,4 +1,4 @@
-package drools.displayVehicle;
+package drools.symptoms;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -15,13 +15,15 @@ public class Protocol implements Serializable{
 	public static enum Type {ADVICE,INPLACE,SHIPMENT};
 	private Type protocolType;
 	
-	public Protocol(String info) {
+	public Protocol(Integer id, String info) {
 		super();
+		this.id = id;
 		this.info = info;
 	}
 	
-	public Protocol(String info, Type protocolType) {
+	public Protocol(Integer id, String info, Type protocolType) {
 		super();
+		this.id = id;
 		this.info = info;
 		this.protocolType = protocolType;
 	}

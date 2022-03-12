@@ -14,7 +14,6 @@ public class Disease implements Serializable{
 	
 	private Integer id;
 	private String disease;
-	private Integer severity_case;
 	private List<String> symptomsList = new ArrayList<String>();
 	
 	public Disease(String disease) {
@@ -52,14 +51,6 @@ public class Disease implements Serializable{
 		this.symptomsList = symptomsList;
 	}
 
-	public Integer getSeverity_case() {
-		return severity_case;
-	}
-
-	public void setSeverity_case(Integer severity_case) {
-		this.severity_case = severity_case;
-	}
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -79,9 +70,11 @@ public class Disease implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Disease [id=" + id + ", disease=" + disease + ", severity_case=" + severity_case + ", symptomsList="
+		return "Disease [id=" + id + ", disease=" + disease + ", symptomsList="
 				+ symptomsList + "]";
 	}
+
+	
 
 	
 	

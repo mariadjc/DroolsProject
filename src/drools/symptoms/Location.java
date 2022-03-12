@@ -1,4 +1,4 @@
-package drools.displayVehicle;
+package drools.symptoms;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -29,8 +29,9 @@ public class Location implements Serializable{
 		this.vehicle = Vehicle.AMBULANCE;
 	}
 
-	public Location(String place) {
+	public Location(Integer id, String place) {
 		super();
+		this.id = id;
 		this.place = place;
 	}
 	public Integer getId() {

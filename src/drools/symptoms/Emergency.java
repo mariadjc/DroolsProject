@@ -1,8 +1,10 @@
-package drools.displayVehicle;
+package drools.symptoms;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class Emergency implements Serializable {
@@ -14,9 +16,12 @@ public class Emergency implements Serializable {
 	private String date;
 	private Integer severity;
 	private String direction;
-	private Protocol protocol;
+	private List<Protocol> protocol_list = new ArrayList<>();
+	public Protocol protocol;
 	private Location location;
-	//private Speciality speciality;
+	private Patient patient;
+	public Specialty specialty;
+	private Disease disease;
 	
 	public Emergency() {
 		super();
@@ -40,6 +45,14 @@ public class Emergency implements Serializable {
 		this.severity = severity;
 	}
 	
+	public Emergency(Integer id, Patient patient) {
+		super();
+		this.id = id;
+		this.date = setDate();
+		this.code = setCode();
+		this.patient = patient;
+	}
+	
 	public String getDirection() {
 		return direction;
 	}
@@ -56,15 +69,23 @@ public class Emergency implements Serializable {
 		this.location = location;
 	}
 
-/*
-	public Speciality getSpeciality() {
-		return speciality;
+
+	public Specialty getSpecialty() {
+		return specialty;
 	}
 
-	public void setSpeciality(Speciality speciality) {
-		this.speciality = speciality;
+	public void setSpecialty(Specialty specialty) {
+		this.specialty = specialty;
 	}
-*/
+
+	public Disease getDisease() {
+		return disease;
+	}
+
+	public void setDisease(Disease disease) {
+		this.disease = disease;
+	}
+
 	public Integer getSeverity() {
 		return severity;
 	}
@@ -94,12 +115,28 @@ public class Emergency implements Serializable {
 		return regDate;
 	}
 	
+	public List<Protocol> getProtocol_list() {
+		return protocol_list;
+	}
+
+	public void setProtocol_list(List<Protocol> protocol_list) {
+		this.protocol_list = protocol_list;
+	}
+	
+	public void setProtocol(Protocol protocol) {
+		this.protocol = protocol;
+	}
+	
 	public Protocol getProtocol() {
 		return protocol;
 	}
+	
+	public Patient getPatient() {
+		return patient;
+	}
 
-	public void setProtocol(Protocol protocol) {
-		this.protocol = protocol;
+	public void setPatient(Patient patient) {
+		this.patient = patient;
 	}
 
 	@Override
@@ -121,8 +158,12 @@ public class Emergency implements Serializable {
 	@Override
 	public String toString() {
 		return "Emergency [id=" + id + ", code=" + code + ", date=" + date + ", severity=" + severity + ", direction="
-				+ direction + ", protocol=" + protocol + "]";
+				+ direction + ", protocol=" + protocol + ", location=" + location
+				+ ", patient=" + patient + ", specialty=" + specialty + ", disease=" + disease + "]";
 	}
+
+	
+	
 	
 	
 	

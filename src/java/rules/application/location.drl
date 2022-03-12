@@ -1,88 +1,74 @@
-import drools.displayVehicle.Location
-import drools.displayVehicle.Protocol
-import drools.displayVehicle.Emergency
+import drools.symptoms.Location
+import drools.symptoms.Protocol
+import drools.symptoms.Emergency
 
+
+				// RULES FOR VEHICLE DISPLAY
 
 rule "home"
 
     dialect "java"
     when
-        w1 : Location (place.equals("Home"))
+        u : Emergency (location.getPlace().equals("Home"))
     then 
-        w1.setVehicle(Location.Vehicle.AMBULANCE);
-        System.out.println("Rule home applied over " + w1);
+        u.getLocation().setVehicle(Location.Vehicle.AMBULANCE);
 end
 
 rule "transit"
 
     dialect "java"
     when
-        w2 : Location (place.equals("Transit"))
+        u : Emergency (location.getPlace().equals("Transit"))
     then 
-        w2.setVehicle(Location.Vehicle.AMBULANCE);
-        System.out.println("Rule transit applied over " + w2);
+        u.getLocation().setVehicle(Location.Vehicle.AMBULANCE);
 end
 
 rule "at work"
 
     dialect "java"
     when
-        w3 : Location (place.equals("Work place"))
+        u : Emergency (location.getPlace().equals("Work place"))
     then 
-        w3.setVehicle(Location.Vehicle.AMBULANCE);
-        System.out.println("Rule at work applied over " + w3);
+        u.getLocation().setVehicle(Location.Vehicle.AMBULANCE);
 end
 
 rule "mountain"
 
     dialect "java"
     when
-        w4 : Location (place.equals("Mountain"))
+        u : Emergency (location.getPlace().equals("Mountain"))
     then 
-        w4.setVehicle(Location.Vehicle.HELICOPTER);
-        System.out.println("Rule mountain applied over " + w4);
+        u.getLocation().setVehicle(Location.Vehicle.HELICOPTER);
 end
 
 rule "at the beach"
 
     dialect "java"
     when
-        w5 : Location (place.equals("Beach"))
+        u : Emergency (location.getPlace().equals("Beach"))
     then 
-        w5.setVehicle(Location.Vehicle.BOAT);
-        System.out.println("Rule at the beach applied over " + w5);
+        u.getLocation().setVehicle(Location.Vehicle.BOAT);
 end
-
 
 /*
-rule "protocol needs vehicle"
+  //-------> FURTHER CONSIDERATIONS FOR PROTOCOL DISPLAY   ----> I will take care of it
 
-    dialect "java"
-    when
-        u : Emergency (protocol.equals(Protocol.Type.SHIPMENT))
-    then 
-        u.setLocation(Location.setVehicle(Location.Vehicle.AMBULANCE));
-        System.out.println("Rule 'protocol needs ambulance' applied over " + u);
+rule "is child"
+	dialect "java"
+	when
+		u : Emergency (patient.getAge_range().equals("Child") && severity <= 3)
+	then
+		u.getLocation().setVehicle(Location.Vehicle.BOAT);
+		System.out.println("I am here");
 end
 
-rule "on-site protocol"
-
-    dialect "java"
-    when
-        u : Emergency (protocol.equals(Protocol.Type.INPLACE))
-    then 
-        u.setLocation(Location.setVehicle(Location.Vehicle.AMBULANCE));
-        System.out.println("Rule 'protocol needs ambulance' applied over " + u);
-end
-
-rule "no transport protocol"
-
-    dialect "java"
-    when
-        u : Emergency (protocol.equals(Protocol.Type.ADVICE))
-    then 
-        u.setLocation(Location.setVehicle(Location.Vehicle.AMBULANCE));
-        System.out.println("Rule 'protocol needs ambulance' applied over " + u);
+							// VEHICLE CONSIDERATIONS
+rule "if advice"
+	dialect "java"
+	when
+		u : Emergency (protocol.getProtocolType() == Protocol.Type.ADVICE)
+	then
+		u.getLocation().setVehicle(null);
 end
 
 */

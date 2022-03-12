@@ -23,6 +23,37 @@ public class SymptomsMain {
 
 		KieSession ksession = kc.newKieSession("symptomsKS");
 		
+		Emergency u = new Emergency();
+    	u.setId(0);
+        
+	    Patient p = new Patient("John","Tudor","Male", "Child", true,false,"23355");
+			p.setId(0);
+		u.setPatient(p);
+		
+		
+		Protocol p1 = new Protocol(0,"Go to Urgencies unit for valoration",Protocol.Type.SHIPMENT);
+		Protocol p2 = new Protocol(1,"Connect to oxygen supply",Protocol.Type.INPLACE);
+		Protocol p3 = new Protocol(2,"Take paracetamol",Protocol.Type.ADVICE);
+		Protocol p4 = new Protocol(3,"Connect to oxygen supply + Inject subcutaneous antipyretic medication",Protocol.Type.SHIPMENT);
+		Protocol p5 = new Protocol(4,"Make appointment with doctor for further evaluation + Take medication and consider changes in status",Protocol.Type.ADVICE);
+		Protocol p6 = new Protocol(5,"Connect catheter + intravenous antifluid and pain medicaments",Protocol.Type.INPLACE);
+		
+		List<Protocol> protocol_list = new ArrayList<>();
+		protocol_list.add(p1);
+		protocol_list.add(p2);
+		protocol_list.add(p3);
+		protocol_list.add(p4);
+		protocol_list.add(p5);
+		protocol_list.add(p6);
+		u.setProtocol_list(protocol_list);
+
+		Location w1 = new Location(0,"Home");
+        Location w2 = new Location(1,"Transit");
+        Location w3 = new Location(2,"Work place");
+        Location w4 = new Location(3,"Mountain");
+        Location w5 = new Location(4,"Beach");
+        u.setLocation(w1);
+        
 		
 		Specialty sp1 = new Specialty(0,"Cardiology");
 		Specialty sp2 = new Specialty(1,"Toxicology");
@@ -181,6 +212,7 @@ public class SymptomsMain {
 		
 		sp6.setDisease_list(other_diseases);
 		
+		
 			
 		// To compare the list of symptoms avoiding the order ----> Needed for the interface NOT rules
 	/*
@@ -189,13 +221,25 @@ public class SymptomsMain {
 		System.out.println(list_1.equals(symptoms_list));
 	*/
 		
-		System.out.println("BEFORE\n" + sp5.getDisease_list().get(9) + "\n\n");
+		//System.out.println("BEFORE\n" + sp5.getDisease_list().get(0) + "\n\n");
 		
-		ksession.insert(sp5);
+		
+		
+	// STEPS
+	// 1. WE SPECIFY THE SPECIALITY
+		u.setSpecialty(sp5);
+		
+	// 2. WE SPECIFY THE SYMPTOMS OF THIS CASE (NOT THE OVERALL FROM ABOVE)
+		// In this case I will choose the ones from 'onco_symptoms_list5_2' that correspond to index 9 of the disease_list
+		
+		Disease select = sp5.getDisease_list().get(9);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
+		u.setDisease(select);
+		
+		ksession.insert(u);
 		
 		ksession.fireAllRules();
-		System.out.println("AFTER\n" +  sp5.getDisease_list().get(9));
-		//System.out.println("AFTER\n" +  sp5);
+		//System.out.println("AFTER\n" +  sp5.getDisease_list().get(0));
+		System.out.println("AFTER\n" +  u);
 		
 		ksession.dispose();
 		
