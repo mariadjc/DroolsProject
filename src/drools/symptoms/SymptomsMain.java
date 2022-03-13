@@ -42,6 +42,14 @@ public class SymptomsMain {
 		Protocol p4 = new Protocol(3,"Connect to oxygen supply + Inject subcutaneous antipyretic medication",Protocol.Type.SHIPMENT);
 		Protocol p5 = new Protocol(4,"Make appointment with doctor for further evaluation + Take medication and consider changes in status",Protocol.Type.ADVICE);
 		Protocol p6 = new Protocol(5,"Connect catheter + intravenous antifluid and pain medicaments",Protocol.Type.INPLACE);
+		
+		
+		//neurology protocol
+		Protocol p14 = new Protocol(13,"Keep the person comfortable + Give water + Ensure access to fresh air + Try to make the person calm", Protocol.Type.ADVICE);
+		Protocol p15 = new Protocol(14,"Make space among person + Clear hard or sharp objects + Don't try to stop the movements + Place the person on side to clear to airways", Protocol.Type.INPLACE);
+		Protocol p16 = new Protocol(15,"The fastest way to hospital", Protocol.Type.SHIPMENT);
+		
+		
 		//Include here more protocols from excel `add them to the correspondent list
 		
 		
@@ -52,8 +60,16 @@ public class SymptomsMain {
 		protocol_list.add(p4);
 		protocol_list.add(p5);
 		protocol_list.add(p6);
+		
+		//adding neurology protocols
+		protocol_list.add(p14);
+		protocol_list.add(p15);
+		protocol_list.add(p16);
 		u.setProtocol_list(protocol_list);
 
+		
+		
+		
 		Location w1 = new Location(0,"Home");
         Location w2 = new Location(1,"Transit");
         Location w3 = new Location(2,"Work place");
@@ -89,6 +105,26 @@ public class SymptomsMain {
 		Disease onco4_2 = new Disease(7,"Breast cancer");
 		Disease onco5_1= new Disease(8,"Leukemia");
 		Disease onco5_2= new Disease(9,"Leukemia");
+		
+		
+		// Neurology diseases
+		List<Disease> neuro_diseases = new ArrayList<>();
+		Disease neuro1_1 = new Disease(0, "Stroke");
+		Disease neuro2_1 = new Disease(1, "Epilepsy");
+		Disease neuro2_2 = new Disease(2,"Epilepsy");
+		Disease neuro2_3 = new Disease(3,"Epilepsy");
+		
+		Disease neuro3_1 = new Disease(4,"Migraine");
+		Disease neuro3_2 = new Disease(5,"Migraine");
+		Disease neuro4_1 = new Disease(6,"Ptsd");
+		Disease neuro5_1 = new Disease(7, "Meningities");
+		
+		
+		
+		
+		
+		
+		
 		
 		List<Disease> other_diseases = new ArrayList<>();
 		Disease other1 = new Disease(0,"Unknown (not urgent)");
@@ -126,7 +162,55 @@ public class SymptomsMain {
 		// TOXICOLOGY
 
 		// NEUROLOGY
-
+			
+			String neuro_symp1 = "Headache/Loss of vision/Loss of balance /Difficulty speaking or undestand/Leg or arm weakness";
+			List<String> neuro_list_1 = Arrays.asList(neuro_symp1.split("/"));
+			List<String> neuro_symptoms_list1 =  new ArrayList<String>(neuro_list_1); 
+			
+			String neuro_symp2 = "Staring at one point/Muscle construction/Loss of consciousness/Staring at one point";
+			List<String> neuro_list_2 = Arrays.asList(neuro_symp2.split("/"));
+			List<String> neuro_symptoms_list2 =  new ArrayList<String>(neuro_list_2);
+			
+			String neuro_symp3 = "Vomits/Headache/Fatigue/Sensitivity to light, smell or sound/Thirst /Mood changes";
+			List<String> neuro_list_3 = Arrays.asList(neuro_symp3.split("/"));
+			List<String> neuro_symptoms_list3 =  new ArrayList<String>(neuro_list_3);
+			
+			
+			String neuro_symp4 = "Headache/Nausea/Pain/Chest pain/Negative Mood/Profused sweating/Difficulty breathing/Avoidence of feelings, thoughts or places";
+			List<String> neuro_list_4 = Arrays.asList(neuro_symp4.split("/"));
+			List<String> neuro_symptoms_list4 =  new ArrayList<String>(neuro_list_4);
+			
+			
+			String neuro_symp5 = "Headache/Seizures/Fever/Rash/Sleepiness/Vomits/Neck or joints pain/Light sensivity";
+			List<String> neuro_list_5 = Arrays.asList(neuro_symp5.split("/"));
+			List<String> neuro_symptoms_list5 =  new ArrayList<String>(neuro_list_5);
+			
+			neuro1_1.setSymptomsList(neuro_symptoms_list1);
+			neuro_diseases.add(neuro1_1);
+			
+			neuro2_1.setSymptomsList(neuro_symptoms_list2);
+			neuro_diseases.add(neuro2_1);
+			
+			neuro2_2.setSymptomsList(neuro_symptoms_list2);
+			neuro_diseases.add(neuro2_2);
+			
+			neuro2_3.setSymptomsList(neuro_symptoms_list2);
+			neuro_diseases.add(neuro2_3);
+			
+			neuro3_1.setSymptomsList(neuro_symptoms_list3);
+			neuro_diseases.add(neuro3_1);
+			
+			neuro3_2.setSymptomsList(neuro_symptoms_list3);
+			neuro_diseases.add(neuro3_2);
+			
+			neuro4_1.setSymptomsList(neuro_symptoms_list4);
+			neuro_diseases.add(neuro4_1);
+			
+			neuro5_1.setSymptomsList(neuro_symptoms_list5);
+			neuro_diseases.add(neuro5_1);
+			
+			sp3.setDisease_list(neuro_diseases);
+			
 		// TRAUMATOLOGY
 		
 		// ONCOLOGY
@@ -236,12 +320,12 @@ public class SymptomsMain {
 		
 	// STEPS
 	// 1. WE SPECIFY THE SPECIALITY
-		u.setSpecialty(sp5);
+		u.setSpecialty(sp3);
 		
 	// 2. WE SPECIFY THE SYMPTOMS OF THIS CASE (NOT THE OVERALL FROM ABOVE)
 		// In this case I will choose the ones from 'onco_symptoms_list5_2' that correspond to index 9 of the disease_list
 		
-		Disease select = sp5.getDisease_list().get(9);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
+		Disease select = sp3.getDisease_list().get(2);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
 		u.setDisease(select);
 		
 		ksession.insert(u);

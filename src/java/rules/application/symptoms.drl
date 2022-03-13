@@ -30,6 +30,103 @@ end
 							// TOXICOLOGY
 
 							// NEUROLOGY
+rule "neurology_stroke"
+	dialect "java"
+	when
+		u: Emergency (specialty.getDisease_list().get(0).getDisease().equals("Stroke"))
+	then
+		u.setSeverity(1);
+		u.setProtocol(u.getProtocol_list().get(15));
+		
+end
+
+rule "neurology_epilepsy_child"
+	dialect "java"
+	when
+		u: Emergency (specialty.getDisease_list().get(1).getDisease().equals("Epilepsy"))
+	then
+		u.setSeverity(2);
+		u.setProtocol(u.getProtocol_list().get(14));
+		
+end
+
+rule "neurology_epilepsy_adult"
+	dialect "java"
+	when
+		u: Emergency (specialty.getDisease_list().get(2).getDisease().equals("Epilepsy"))
+	then
+		u.setSeverity(3);
+		u.setProtocol(u.getProtocol_list().get(14));
+		
+end
+
+rule "neurology_epilepsy_elder"
+	dialect "java"
+	when
+		u: Emergency (specialty.getDisease_list().get(2).getDisease().equals("Epilepsy"))
+	then
+		u.setSeverity(2);
+		u.setProtocol(u.getProtocol_list().get(14));
+		
+end
+
+rule "neurology_migraine_child"
+	dialect "java"
+	when
+		u: Emergency (specialty.getDisease_list().get(3).getDisease().equals("Migraine"))
+	then
+		u.setSeverity(4);
+		u.setProtocol(u.getProtocol_list().get(13));
+		
+end
+
+rule "neurology_migraine_adult"
+	dialect "java"
+	when
+		u: Emergency (specialty.getDisease_list().get(3).getDisease().equals("Migraine"))
+	then
+		u.setSeverity(5);
+		u.setProtocol(u.getProtocol_list().get(13));
+		
+end
+
+rule "neurology_migraine_elder"
+	dialect "java"
+	when
+		u: Emergency (specialty.getDisease_list().get(3).getDisease().equals("Migraine"))
+	then
+		u.setSeverity(5);
+		u.setProtocol(u.getProtocol_list().get(13));
+		
+end
+
+rule "neurology_ptsd"
+	dialect "java"
+	when
+		u: Emergency (specialty.getDisease_list().get(4).getDisease().equals("Ptsd"))
+	then
+		u.setSeverity(5);
+		u.setProtocol(u.getProtocol_list().get(13));
+		
+end
+
+rule "neurology_meningities"
+	dialect "java"
+	when
+		u: Emergency (specialty.getDisease_list().get(3).getDisease().equals("Meningities"))
+	then
+		u.setSeverity(1);
+		u.setProtocol(u.getProtocol_list().get(15));
+		
+end
+
+
+
+
+
+
+
+
 
 							// TRAUMATOLOGY
 							
