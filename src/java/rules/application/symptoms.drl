@@ -601,8 +601,8 @@ rule "oncology_lung_cancer_light"
 	when
 		u: Emergency (specialty.equals("Oncology") && specialty.getDisease_list().get(4).getDisease().equals("Lung cancer"))
 	then
-		u.setSeverity(3);
-		u.setProtocol(u.getProtocol_list().get(1));
+		u.setSeverity(5);
+		u.setProtocol(u.getProtocol_list().get(5));
 end
 
 rule "oncology_lung_cancer_severe"
@@ -610,8 +610,8 @@ rule "oncology_lung_cancer_severe"
 	when
 		u: Emergency (specialty.equals("Oncology") && specialty.getDisease_list().get(5).getDisease().equals("Lung cancer"))
 	then
-		u.setSeverity(2);
-		u.setProtocol(u.getProtocol_list().get(0));
+		u.setSeverity(1);
+		u.setProtocol(u.getProtocol_list().get(16));
 end
 
 rule "oncology_breast_cancer_light"

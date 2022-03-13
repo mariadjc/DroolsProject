@@ -481,7 +481,7 @@ public class SymptomsMain {
 		// In this case I will choose the ones from 'onco_symptoms_list5_2' that correspond to index 9 of the disease_list
 		
 
-		Disease select = sp5.getDisease_list().get(5);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
+		Disease select = sp5.getDisease_list().get(0);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
 
 		u.setDisease(select);
 		
