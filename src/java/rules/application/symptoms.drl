@@ -3,29 +3,78 @@ import drools.symptoms.Emergency
 
 							// CARDIOLOGY
 
-/*
 rule "cardiology_heart_attack"
 	dialect "java"
 	when
 		u: Emergency (specialty.equals("Cardiology") && specialty.getDisease_list().get(0).getDisease().equals("Heart attack"))
 	then
 		u.setSeverity(1);
-		
-	// ---> FALTA ESTE PROTOCOLO EN EXCEL --> TIENES Q PONER SU ÍNDICE (MIRA EN symptomsMain en cuál está metido)
-		//u.setProtocol(u.getProtocol_list().get(4));
+		u.setProtocol(u.getProtocol_list().get(7));
 end
 
-rule "cardiology_heart_failure"
+rule "cardiology_heart_failure_severe"
 	dialect "java"
 	when
 		u: Emergency (specialty.equals("Cardiology") && specialty.getDisease_list().get(1).getDisease().equals("Heart failure"))
 	then
-		u.setSeverity(2);
+		u.setSeverity(3);
+		u.setProtocol(u.getProtocol_list().get(8));
 		
-	// ---> FALTA ESTE PROTOCOLO EN EXCEL --> TIENES Q PONER SU ÍNDICE (MIRA EN symptomsMain en cuál está metido)
-		//u.setProtocol(u.getProtocol_list().get(4));
 end
-*/
+
+rule "cardiology_heart_failure_severe_light"
+	dialect "java"
+	when
+		u: Emergency (specialty.equals("Cardiology") && specialty.getDisease_list().get(2).getDisease().equals("Heart failure"))
+	then
+		u.setSeverity(4);
+		u.setProtocol(u.getProtocol_list().get(9));
+		
+end
+
+rule "cardiology_hipertensive_crisis"
+	dialect "java"
+	when
+		u: Emergency (specialty.equals("Cardiology") && specialty.getDisease_list().get(3).getDisease().equals("Hipertensive crisis"))
+	then
+		u.setSeverity(3);
+		u.setProtocol(u.getProtocol_list().get(10));
+		
+end
+
+rule "cardiology_ictus"
+	dialect "java"
+	when
+		u: Emergency (specialty.equals("Cardiology") && specialty.getDisease_list().get(4).getDisease().equals("Ictus"))
+	then
+		u.setSeverity(1);
+		u.setProtocol(u.getProtocol_list().get(11));
+		
+end
+
+rule "cardiology_syncope_Ancients"
+	dialect "java"
+	when
+		u: Emergency (specialty.equals("Cardiology") && specialty.getDisease_list().get(5).getDisease().equals("Syncope") && patient.getAge_range().equals("Ancient"))
+	then
+		u.setSeverity(4);
+		u.setProtocol(u.getProtocol_list().get(12));
+		
+end
+
+
+rule "cardiology_syncope_others"
+	dialect "java"
+	when
+		u: Emergency (specialty.equals("Cardiology") && specialty.getDisease_list().get(6).getDisease().equals("Syncope"))
+	then
+		u.setSeverity(5);
+		u.setProtocol(u.getProtocol_list().get(13));
+		
+end
+
+
+
 
 							// TOXICOLOGY
 							

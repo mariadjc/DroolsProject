@@ -43,6 +43,15 @@ public class SymptomsMain {
 		Protocol p5 = new Protocol(4,"Make appointment with doctor for further evaluation + Take medication and consider changes in status",Protocol.Type.ADVICE);
 		Protocol p6 = new Protocol(5,"Connect catheter + intravenous antifluid and pain medicaments",Protocol.Type.INPLACE);
 		Protocol p7 = new Protocol(6, "Connect to oxygen supply + Control vomits + If the person begins to have seizures, administer first aid for these cases",Protocol.Type.SHIPMENT);
+		Protocol p8 = new Protocol(7, "Measure constants +  Nitroglicerine + Reanimation", Protocol.Type.SHIPMENT); // heart attack
+		Protocol p9 = new Protocol(8, "Measure constants +  Oxygen + Diuretics", Protocol.Type.SHIPMENT); // heart failure severe
+		Protocol p10 = new Protocol(9, "Measure constants +  Oxygen", Protocol.Type.INPLACE); // heart failure light
+		Protocol p11 = new Protocol(10, "Tension measure + calm the pacient + hipotensive drug", Protocol.Type.INPLACE); // hipertensive crisis
+		Protocol p12 = new Protocol(11, "Head elevation + ECG + Tension measure + Neuroprotector drugs", Protocol.Type.SHIPMENT); // ictus
+		Protocol p13 = new Protocol(12, "Leg lift + Hydration + ECG + Recommend to make appointment with doctor for further evaluation", Protocol.Type.INPLACE); // syncope
+		Protocol p14 = new Protocol(13, "Leg lift + Hydration", Protocol.Type.ADVICE); // syncope
+		
+		
 		//Include here more protocols from excel `add them to the correspondent list
 		
 		
@@ -54,6 +63,13 @@ public class SymptomsMain {
 		protocol_list.add(p5);
 		protocol_list.add(p6);
 		protocol_list.add(p7);
+		protocol_list.add(p8);
+		protocol_list.add(p9);
+		protocol_list.add(p10);
+		protocol_list.add(p11);
+		protocol_list.add(p12);
+		protocol_list.add(p13);
+		protocol_list.add(p14);
 		u.setProtocol_list(protocol_list);
 
 		Location w1 = new Location(0,"Home");
@@ -68,14 +84,16 @@ public class SymptomsMain {
 		Specialty sp3 = new Specialty(2,"Neurology");
 		Specialty sp4 = new Specialty(3,"Traumatology");
 		Specialty sp5 = new Specialty(4,"Oncology");
-		Specialty sp6 = new Specialty(5,"Other");   // Esta es aún cuestionable
+		Specialty sp6 = new Specialty(5,"Other");   // Esta es aï¿½n cuestionable
 		
 		List<Disease> cardio_diseases = new ArrayList<>();
 		Disease cardio1 = new Disease(0,"Heart attack");
 		Disease cardio2 = new Disease(1,"Heart failure");
-		Disease cardio3 = new Disease(2,"Hipertensive crisis");
-		Disease cardio4 = new Disease(3,"Ictus");
-		Disease cardio5= new Disease(4,"Syncope");
+		Disease cardio3 = new Disease(2,"Heart failure");
+		Disease cardio4 = new Disease(3,"Hipertensive crisis");
+		Disease cardio5 = new Disease(4,"Ictus");
+		Disease cardio6= new Disease(5,"Syncope");
+		Disease cardio7= new Disease(6,"Syncope");
 		
 		
 	// Several cases for same Disease because some symptoms differ
@@ -105,23 +123,52 @@ public class SymptomsMain {
 		// NOW   --------->  CREATE LISTS OF SYMPTOMS (SYMPLIFY IT TO THE MAXIMUM)
 			
 		// CARDIOLOGY
-
-		String cardio_symp1 = "Chest pressure/Fatigue/Pain extends to the left arm/Disnea/Cold sweat";
+		
+		//HEART ATTACK
+		String cardio_symp1 = "Chest pressure/Fatigue/Pain extends to the left arm/Disnea/Cold sweat"; 
 		List<String> cardio_list_1 = Arrays.asList(cardio_symp1.split("/"));
 		List<String> cardio_symptoms_list1 =  new ArrayList<String>(cardio_list_1); 
 			// This allows to remove or add symptoms to the list of Strings (USEFUL FOR THE APPLICATION, NOT THE RULES)
 		
+		//HEART FAILURE
 		String cardio_symp2 = "Phlegm/Swelling/Faints/Fatigue/Heart palpitations";
 		List<String> cardio_list_2 = Arrays.asList(cardio_symp2.split("/"));
 		List<String> cardio_symptoms_list2 =  new ArrayList<String>(cardio_list_2); 
+		
+		String cardio_symp3 = "Swelling/Faints/Fatigue";
+		List<String> cardio_list_3 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_symptoms_list3 =  new ArrayList<String>(cardio_list_3); 
+		
+		//HIPERTENSIVE CRISIS
+		String cardio_symp4 = "Vomits/Pain/Disnea/Confusion";
+		List<String> cardio_list_4 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_symptoms_list4 =  new ArrayList<String>(cardio_list_4); 
+		
+		//ICTUS
+		String cardio_symp5 = "Sudden numbness/Paralysis/Confusion/Difficulty speaking or undestand/Loss of vision/Loss of balance /Pain";
+		List<String> cardio_list_5 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_symptoms_list5 =  new ArrayList<String>(cardio_list_5);
+		
+		//SYNCOPE
+		String cardio_symp6 = "Pale skin/Daze/Tunnel vision/Warmth sensation/Cold sweat";
+		List<String> cardio_list_6 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_symptoms_list6 =  new ArrayList<String>(cardio_list_6);
+	
 		
 		cardio1.setSymptomsList(cardio_symptoms_list1);
 			cardio_diseases.add(cardio1);
 		cardio2.setSymptomsList(cardio_symptoms_list2);
 			cardio_diseases.add(cardio2);
+		cardio3.setSymptomsList(cardio_symptoms_list3);
 			cardio_diseases.add(cardio3);
+		cardio4.setSymptomsList(cardio_symptoms_list4);
 			cardio_diseases.add(cardio4);
+		cardio5.setSymptomsList(cardio_symptoms_list5);
 			cardio_diseases.add(cardio5);
+		cardio6.setSymptomsList(cardio_symptoms_list6);
+			cardio_diseases.add(cardio6);
+		cardio7.setSymptomsList(cardio_symptoms_list6);
+			cardio_diseases.add(cardio7);
 			
 		sp1.setDisease_list(cardio_diseases);
 		
