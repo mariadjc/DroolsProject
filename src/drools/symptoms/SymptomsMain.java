@@ -54,7 +54,7 @@ public class SymptomsMain {
 		Protocol p16 = new Protocol(15,"The fastest way to hospital", Protocol.Type.SHIPMENT);
 		Protocol p17 = new Protocol(13, "Leg lift + Hydration", Protocol.Type.ADVICE); // syncope
 
-		// p17 has same index
+		// p17 has same index as p14 -----> CHANGE THIS
 		
 		//neurology protocol
 		
