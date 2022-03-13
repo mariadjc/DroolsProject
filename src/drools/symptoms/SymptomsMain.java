@@ -42,14 +42,14 @@ public class SymptomsMain {
 		Protocol p4 = new Protocol(3,"Connect to oxygen supply + Inject subcutaneous antipyretic medication",Protocol.Type.SHIPMENT);
 		Protocol p5 = new Protocol(4,"Make appointment with doctor for further evaluation + Take medication and consider changes in status",Protocol.Type.ADVICE);
 		Protocol p6 = new Protocol(5,"Connect catheter + intravenous antifluid and pain medicaments",Protocol.Type.INPLACE);
-<<<<<<< HEAD
+
 		
 		
 		//neurology protocol
 		Protocol p14 = new Protocol(13,"Keep the person comfortable + Give water + Ensure access to fresh air + Try to make the person calm", Protocol.Type.ADVICE);
 		Protocol p15 = new Protocol(14,"Make space among person + Clear hard or sharp objects + Don't try to stop the movements + Place the person on side to clear to airways", Protocol.Type.INPLACE);
 		Protocol p16 = new Protocol(15,"The fastest way to hospital", Protocol.Type.SHIPMENT);
-=======
+
 		Protocol p7 = new Protocol(6, "Connect to oxygen supply + Control vomits + If the person begins to have seizures, administer first aid for these cases",Protocol.Type.SHIPMENT);
 		Protocol p8 = new Protocol(7, "Measure constants +  Nitroglicerine + Reanimation", Protocol.Type.SHIPMENT); // heart attack
 		Protocol p9 = new Protocol(8, "Measure constants +  Oxygen + Diuretics", Protocol.Type.SHIPMENT); // heart failure severe
@@ -58,7 +58,7 @@ public class SymptomsMain {
 		Protocol p12 = new Protocol(11, "Head elevation + ECG + Tension measure + Neuroprotector drugs", Protocol.Type.SHIPMENT); // ictus
 		Protocol p13 = new Protocol(12, "Leg lift + Hydration + ECG + Recommend to make appointment with doctor for further evaluation", Protocol.Type.INPLACE); // syncope
 		Protocol p14 = new Protocol(13, "Leg lift + Hydration", Protocol.Type.ADVICE); // syncope
->>>>>>> 281e2f23067a20aa6abb3b92b24d7c3b58f0b49b
+
 		
 		
 		//Include here more protocols from excel `add them to the correspondent list
@@ -71,13 +71,13 @@ public class SymptomsMain {
 		protocol_list.add(p4);
 		protocol_list.add(p5);
 		protocol_list.add(p6);
-<<<<<<< HEAD
+
 		
 		//adding neurology protocols
 		protocol_list.add(p14);
 		protocol_list.add(p15);
 		protocol_list.add(p16);
-=======
+
 		protocol_list.add(p7);
 		protocol_list.add(p8);
 		protocol_list.add(p9);
@@ -86,7 +86,7 @@ public class SymptomsMain {
 		protocol_list.add(p12);
 		protocol_list.add(p13);
 		protocol_list.add(p14);
->>>>>>> 281e2f23067a20aa6abb3b92b24d7c3b58f0b49b
+
 		u.setProtocol_list(protocol_list);
 
 		
@@ -391,21 +391,21 @@ public class SymptomsMain {
 		
 	// STEPS
 	// 1. WE SPECIFY THE SPECIALITY
-<<<<<<< HEAD
+
 		u.setSpecialty(sp3);
-=======
+
 		u.setSpecialty(sp2);
->>>>>>> 281e2f23067a20aa6abb3b92b24d7c3b58f0b49b
+
 		
 	// 2. WE SPECIFY THE SYMPTOMS OF THIS CASE (NOT THE OVERALL FROM ABOVE)
 		// In this case I will choose the ones from 'onco_symptoms_list5_2' that correspond to index 9 of the disease_list
 		
-<<<<<<< HEAD
+
 		Disease select = sp3.getDisease_list().get(2);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
-=======
+
 		
 		Disease select = sp2.getDisease_list().get(0);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
->>>>>>> 281e2f23067a20aa6abb3b92b24d7c3b58f0b49b
+
 		u.setDisease(select);
 		
 		
