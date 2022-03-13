@@ -71,13 +71,6 @@ public class SymptomsMain {
 		protocol_list.add(p4);
 		protocol_list.add(p5);
 		protocol_list.add(p6);
-
-		
-		//adding neurology protocols
-		protocol_list.add(p14);
-		protocol_list.add(p15);
-		protocol_list.add(p16);
-
 		protocol_list.add(p7);
 		protocol_list.add(p8);
 		protocol_list.add(p9);
@@ -85,8 +78,13 @@ public class SymptomsMain {
 		protocol_list.add(p11);
 		protocol_list.add(p12);
 		protocol_list.add(p13);
+		protocol_list.add(p14);
+		protocol_list.add(p15);
+		protocol_list.add(p16);
 		protocol_list.add(p17);
+		
 
+		
 		u.setProtocol_list(protocol_list);
 
 		
