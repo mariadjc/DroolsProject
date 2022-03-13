@@ -57,9 +57,9 @@ public class SymptomsMain {
 		Protocol p11 = new Protocol(10, "Tension measure + calm the pacient + hipotensive drug", Protocol.Type.INPLACE); // hipertensive crisis
 		Protocol p12 = new Protocol(11, "Head elevation + ECG + Tension measure + Neuroprotector drugs", Protocol.Type.SHIPMENT); // ictus
 		Protocol p13 = new Protocol(12, "Leg lift + Hydration + ECG + Recommend to make appointment with doctor for further evaluation", Protocol.Type.INPLACE); // syncope
-		Protocol p14 = new Protocol(13, "Leg lift + Hydration", Protocol.Type.ADVICE); // syncope
+		Protocol p17 = new Protocol(13, "Leg lift + Hydration", Protocol.Type.ADVICE); // syncope
 
-		
+
 		
 		//Include here more protocols from excel `add them to the correspondent list
 		
@@ -85,7 +85,7 @@ public class SymptomsMain {
 		protocol_list.add(p11);
 		protocol_list.add(p12);
 		protocol_list.add(p13);
-		protocol_list.add(p14);
+		protocol_list.add(p17);
 
 		u.setProtocol_list(protocol_list);
 
@@ -144,18 +144,39 @@ public class SymptomsMain {
 		
 		
 		
-		
-		
-		
+		List<Disease> toxic_diseases = new ArrayList<>();
+		Disease tox1_1 = new Disease(0,"Food poisoning");
+		Disease tox1_2 = new Disease(1,"Food poisoning");
+		Disease tox1_3 = new Disease(2,"Food poisoning");
+		Disease tox1_4 = new Disease(3,"Food poisoning");
+		Disease tox1_5 = new Disease(4,"Food poisoning");
+		Disease tox1_6 = new Disease(5,"Food poisoning");
+		Disease tox1_7 = new Disease(6,"Food poisoning");
+		Disease tox2_1 = new Disease(7,"Drugs");
+		Disease tox2_2 = new Disease(8,"Drugs");
+		Disease tox3_1 = new Disease(9,"Hangover");
+		Disease tox3_2 = new Disease(10,"Hangover");
+		Disease tox3_3 = new Disease(11,"Hangover");
+		Disease tox3_4 = new Disease(12,"Hangover");
+		Disease tox4_1 = new Disease(13,"Allergies for medicamente");
+		Disease tox4_2 = new Disease(14,"Allergies for medicamente");
+		Disease tox4_3 = new Disease(15,"Allergies for medicamente");
+		Disease tox4_4 = new Disease(16,"Allergies for medicamente");
+		Disease tox4_5 = new Disease(17,"Allergies for medicamente");
+		Disease tox4_6 = new Disease(18,"Allergies for medicamente");
+		Disease tox4_7 = new Disease(19,"Allergies for medicamente");
+		Disease tox4_8 = new Disease(20,"Allergies for medicamente");
+		Disease tox4_9 = new Disease(21,"Allergies for medicamente");
+		Disease tox4_10 = new Disease(22,"Allergies for medicamente");
+		Disease tox4_11 = new Disease(23,"Allergies for medicamente");
+		Disease tox4_12 = new Disease(24,"Allergies for medicamente");
+		Disease tox4_13 = new Disease(25,"Allergies for medicamente");
 		
 		
 		List<Disease> other_diseases = new ArrayList<>();
 		Disease other1 = new Disease(0,"Unknown (not urgent)");
 		Disease other2 = new Disease(1,"Unknown (urgent)");
 		
-		List<Disease> toxic_diseases = new ArrayList<>();
-		Disease tox1 = new Disease(0,"Food Poisoning");
-		Disease tox2 = new Disease(1,"Drugs");
 		//Include here more diseases in a lists of correspondent specialities
 
 		
@@ -216,21 +237,84 @@ public class SymptomsMain {
 		
 		
 		// TOXICOLOGY
-		String tox_symp_1 = "Fever/Chills/Diarrhea/Pain/Nausea/Headache/Heart rate acceleration/Skin redness/Vomits/Paralysis";
-		List<String> tox_list_1 = Arrays.asList(tox_symp_1.split("/"));
-		List<String> tox_symptoms_list1 =  new ArrayList<String>(tox_list_1); 
+
+		// Food Poisoning
+		String tox_symp1 = "Fever/Chills/Diarrhea/Pain/Nausea/Headache/Heart rate acceleration/Skin redness/Vomits/Paralysis";
+		List<String> tox_list_1 = Arrays.asList(tox_symp1.split("/"));
+		List<String> tox_symptoms_list1 = new ArrayList<String>(tox_list_1);
+
+		// Drugs
+		String tox_symp2 = "Negative Mood/Vomits/Hyperactivity/Phlegmaticy/Reddened Sclera";
+		List<String> tox_list_2 = Arrays.asList(tox_symp2.split("/"));
+		List<String> tox_symptoms_list2 = new ArrayList<String>(tox_list_2);
+
+		// Hangover
+		String tox_symp3 = "Fatigue/Headache/Loss of appetite/Diarrhea/Nausea/Vomits/Loss of appetite/Headache";
+		List<String> tox_list_3 = Arrays.asList(tox_symp3.split("/"));
+		List<String> tox_symptoms_list3 = new ArrayList<String>(tox_list_3);
+
+		// Allergies for medicamente
+		String tox_symp4 = "Vomits/Runny Nose/Itching/Hives/Swelling/Skin Rash/Shortness of breath";
+		List<String> tox_list_4 = Arrays.asList(tox_symp4.split("/"));
+		List<String> tox_symptoms_list4 = new ArrayList<String>(tox_list_4);
+
 		
-		String tox_symp_2 = "Negative Mood/Vomits/Hyperactivity/Phlegmaticy/Reddened Sclera";
-		List<String> tox_list_2 = Arrays.asList(tox_symp_2.split("/"));
-		List<String> tox_symptoms_list2 =  new ArrayList<String>(tox_list_2); 
-		
-		
-		tox1.setSymptomsList(tox_symptoms_list1);
-			toxic_diseases.add(tox1);
-		tox2.setSymptomsList(tox_symptoms_list2);
-			toxic_diseases.add(tox2);
+		tox1_1.setSymptomsList(tox_symptoms_list1);
+		toxic_diseases.add(tox1_1);
+		tox1_2.setSymptomsList(tox_symptoms_list1);
+		toxic_diseases.add(tox1_2);
+		tox1_3.setSymptomsList(tox_symptoms_list1);
+		toxic_diseases.add(tox1_3);
+		tox1_4.setSymptomsList(tox_symptoms_list1);
+		toxic_diseases.add(tox1_4);
+		tox1_5.setSymptomsList(tox_symptoms_list1);
+		toxic_diseases.add(tox1_5);
+		tox1_6.setSymptomsList(tox_symptoms_list1);
+		toxic_diseases.add(tox1_6);
+		tox1_7.setSymptomsList(tox_symptoms_list1);
+		toxic_diseases.add(tox1_7);
+		tox2_1.setSymptomsList(tox_symptoms_list2);
+		toxic_diseases.add(tox2_1);
+		tox2_2.setSymptomsList(tox_symptoms_list2);
+		toxic_diseases.add(tox2_2);
+		tox3_1.setSymptomsList(tox_symptoms_list3);
+		toxic_diseases.add(tox3_1);
+		tox3_2.setSymptomsList(tox_symptoms_list3);
+		toxic_diseases.add(tox3_2);
+		tox3_3.setSymptomsList(tox_symptoms_list3);
+		toxic_diseases.add(tox3_3);
+		tox3_4.setSymptomsList(tox_symptoms_list3);
+		toxic_diseases.add(tox3_4);
+		tox4_1.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_1);
+		tox4_2.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_2);
+		tox4_3.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_3);
+		tox4_4.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_4);
+		tox4_5.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_5);
+		tox4_6.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_6);
+		tox4_7.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_7);
+		tox4_8.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_8);
+		tox4_9.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_9);
+		tox4_10.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_10);
+		tox4_11.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_11);
+		tox4_12.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_12);
+		tox4_13.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4_13);
+	
 
 		sp2.setDisease_list(toxic_diseases);
+			
 			
 		// NEUROLOGY
 			
@@ -392,19 +476,14 @@ public class SymptomsMain {
 	// STEPS
 	// 1. WE SPECIFY THE SPECIALITY
 
-		u.setSpecialty(sp3);
-
-		u.setSpecialty(sp2);
+		u.setSpecialty(sp5);
 
 		
 	// 2. WE SPECIFY THE SYMPTOMS OF THIS CASE (NOT THE OVERALL FROM ABOVE)
 		// In this case I will choose the ones from 'onco_symptoms_list5_2' that correspond to index 9 of the disease_list
 		
 
-		Disease select = sp3.getDisease_list().get(2);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
-
-		
-		Disease select = sp2.getDisease_list().get(0);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
+		Disease select = sp5.getDisease_list().get(5);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
 
 		u.setDisease(select);
 		
@@ -418,10 +497,6 @@ public class SymptomsMain {
 		System.out.println("AFTER\n" +  u);
 		
 		ksession.dispose();
-		
-		
-		
-		
 		
 	}
 	
