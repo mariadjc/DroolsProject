@@ -2,11 +2,8 @@
 <kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://www.drools.org/xsd/kmodule">
    
-	  <kbase name="test" packages="java.rules.examples.evaluation">
-	      <ksession name="evaluationKS"/>
-	  </kbase>
 	  
-	  <kbase name="vehicle" packages="java.rules.application">
+	  <kbase name="vehicles" packages="java.rules.application">
 	      <ksession name="vechicleKS"/>
 	  </kbase>
 	  

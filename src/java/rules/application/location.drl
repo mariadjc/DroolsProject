@@ -1,7 +1,6 @@
-import drools.symptoms.Location
-import drools.symptoms.Protocol
-import drools.symptoms.Emergency
-
+import drools.vehicles.Emergency2
+import drools.vehicles.Location
+import drools.vehicles.Protocol
 
 				// RULES FOR VEHICLE DISPLAY
 
@@ -9,7 +8,7 @@ rule "home"
 
     dialect "java"
     when
-        u : Emergency (location.getPlace().equals("Home"))
+        u : Emergency2 (location.getPlace().equals("Home"))
     then 
         u.getLocation().setVehicle(Location.Vehicle.AMBULANCE);
 end
@@ -18,7 +17,7 @@ rule "transit"
 
     dialect "java"
     when
-        u : Emergency (location.getPlace().equals("Transit"))
+        u : Emergency2 (location.getPlace().equals("Transit"))
     then 
         u.getLocation().setVehicle(Location.Vehicle.AMBULANCE);
 end
@@ -27,7 +26,7 @@ rule "at work"
 
     dialect "java"
     when
-        u : Emergency (location.getPlace().equals("Work place"))
+        u : Emergency2 (location.getPlace().equals("Work place"))
     then 
         u.getLocation().setVehicle(Location.Vehicle.AMBULANCE);
 end
@@ -36,7 +35,7 @@ rule "mountain"
 
     dialect "java"
     when
-        u : Emergency (location.getPlace().equals("Mountain"))
+        u : Emergency2 (location.getPlace().equals("Mountain"))
     then 
         u.getLocation().setVehicle(Location.Vehicle.HELICOPTER);
 end
@@ -45,7 +44,7 @@ rule "at the beach"
 
     dialect "java"
     when
-        u : Emergency (location.getPlace().equals("Beach"))
+        u : Emergency2 (location.getPlace().equals("Beach"))
     then 
         u.getLocation().setVehicle(Location.Vehicle.BOAT);
 end
@@ -56,20 +55,23 @@ end
 rule "is child"
 	dialect "java"
 	when
-		u : Emergency (patient.getAge_range().equals("Child") && severity <= 3)
+		u : Emergency2 (patient.getAge_range().equals("Child") && severity <= 3)
 	then
 		u.getLocation().setVehicle(Location.Vehicle.BOAT);
 		System.out.println("I am here");
 end
 
+*/
+/*
 							// VEHICLE CONSIDERATIONS
 rule "if advice"
 	dialect "java"
 	when
-		u : Emergency (protocol.getProtocolType() == Protocol.Type.ADVICE)
+		u : Emergency2 (protocol.getProtocolType() == Protocol.Type.ADVICE)
 	then
 		u.getLocation().setVehicle(null);
 end
+
 
 */
 

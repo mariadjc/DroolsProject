@@ -1,4 +1,4 @@
-package pojos.application;
+package drools.vehicles;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -25,7 +25,7 @@ public class Patient implements Serializable {
 		this.id = id;
 	}
 
-	public Patient(String gender, String age_range, Boolean chronic, Boolean drugs, String name, String surname,
+	public Patient(String name, String surname, String gender, String age_range, Boolean chronic, Boolean drugs, 
 			String reference_number) {
 		super();
 		this.gender = gender;

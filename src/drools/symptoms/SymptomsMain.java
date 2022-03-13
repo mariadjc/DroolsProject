@@ -42,12 +42,23 @@ public class SymptomsMain {
 		Protocol p4 = new Protocol(3,"Connect to oxygen supply + Inject subcutaneous antipyretic medication",Protocol.Type.SHIPMENT);
 		Protocol p5 = new Protocol(4,"Make appointment with doctor for further evaluation + Take medication and consider changes in status",Protocol.Type.ADVICE);
 		Protocol p6 = new Protocol(5,"Connect catheter + intravenous antifluid and pain medicaments",Protocol.Type.INPLACE);
+<<<<<<< HEAD
 		
 		
 		//neurology protocol
 		Protocol p14 = new Protocol(13,"Keep the person comfortable + Give water + Ensure access to fresh air + Try to make the person calm", Protocol.Type.ADVICE);
 		Protocol p15 = new Protocol(14,"Make space among person + Clear hard or sharp objects + Don't try to stop the movements + Place the person on side to clear to airways", Protocol.Type.INPLACE);
 		Protocol p16 = new Protocol(15,"The fastest way to hospital", Protocol.Type.SHIPMENT);
+=======
+		Protocol p7 = new Protocol(6, "Connect to oxygen supply + Control vomits + If the person begins to have seizures, administer first aid for these cases",Protocol.Type.SHIPMENT);
+		Protocol p8 = new Protocol(7, "Measure constants +  Nitroglicerine + Reanimation", Protocol.Type.SHIPMENT); // heart attack
+		Protocol p9 = new Protocol(8, "Measure constants +  Oxygen + Diuretics", Protocol.Type.SHIPMENT); // heart failure severe
+		Protocol p10 = new Protocol(9, "Measure constants +  Oxygen", Protocol.Type.INPLACE); // heart failure light
+		Protocol p11 = new Protocol(10, "Tension measure + calm the pacient + hipotensive drug", Protocol.Type.INPLACE); // hipertensive crisis
+		Protocol p12 = new Protocol(11, "Head elevation + ECG + Tension measure + Neuroprotector drugs", Protocol.Type.SHIPMENT); // ictus
+		Protocol p13 = new Protocol(12, "Leg lift + Hydration + ECG + Recommend to make appointment with doctor for further evaluation", Protocol.Type.INPLACE); // syncope
+		Protocol p14 = new Protocol(13, "Leg lift + Hydration", Protocol.Type.ADVICE); // syncope
+>>>>>>> 281e2f23067a20aa6abb3b92b24d7c3b58f0b49b
 		
 		
 		//Include here more protocols from excel `add them to the correspondent list
@@ -60,11 +71,22 @@ public class SymptomsMain {
 		protocol_list.add(p4);
 		protocol_list.add(p5);
 		protocol_list.add(p6);
+<<<<<<< HEAD
 		
 		//adding neurology protocols
 		protocol_list.add(p14);
 		protocol_list.add(p15);
 		protocol_list.add(p16);
+=======
+		protocol_list.add(p7);
+		protocol_list.add(p8);
+		protocol_list.add(p9);
+		protocol_list.add(p10);
+		protocol_list.add(p11);
+		protocol_list.add(p12);
+		protocol_list.add(p13);
+		protocol_list.add(p14);
+>>>>>>> 281e2f23067a20aa6abb3b92b24d7c3b58f0b49b
 		u.setProtocol_list(protocol_list);
 
 		
@@ -75,30 +97,31 @@ public class SymptomsMain {
         Location w3 = new Location(2,"Work place");
         Location w4 = new Location(3,"Mountain");
         Location w5 = new Location(4,"Beach");
-        u.setLocation(w1);
-        
+        u.setLocation(w5);
 		
 		Specialty sp1 = new Specialty(0,"Cardiology");
 		Specialty sp2 = new Specialty(1,"Toxicology");
 		Specialty sp3 = new Specialty(2,"Neurology");
 		Specialty sp4 = new Specialty(3,"Traumatology");
 		Specialty sp5 = new Specialty(4,"Oncology");
-		Specialty sp6 = new Specialty(5,"Other");   // Esta es aún cuestionable
+		Specialty sp6 = new Specialty(5,"Other");   // Esta es aï¿½n cuestionable
 		
 		List<Disease> cardio_diseases = new ArrayList<>();
 		Disease cardio1 = new Disease(0,"Heart attack");
 		Disease cardio2 = new Disease(1,"Heart failure");
-		Disease cardio3 = new Disease(2,"Hipertensive crisis");
-		Disease cardio4 = new Disease(3,"Ictus");
-		Disease cardio5= new Disease(4,"Syncope");
+		Disease cardio3 = new Disease(2,"Heart failure");
+		Disease cardio4 = new Disease(3,"Hipertensive crisis");
+		Disease cardio5 = new Disease(4,"Ictus");
+		Disease cardio6= new Disease(5,"Syncope");
+		Disease cardio7= new Disease(6,"Syncope");
 		
 		
 	// Several cases for same Disease because some symptoms differ
 		List<Disease> onco_diseases = new ArrayList<>();
 		Disease onco1_1 = new Disease(0,"Colon cancer");
 		Disease onco1_2 = new Disease(1,"Colon cancer");
-		Disease onco2_1 = new Disease(2,"Prostate_cancer");
-		Disease onco2_2 = new Disease(3,"Prostate_cancer");
+		Disease onco2_1 = new Disease(2,"Prostate cancer");
+		Disease onco2_2 = new Disease(3,"Prostate cancer");
 		Disease onco3_1 = new Disease(4,"Lung cancer");
 		Disease onco3_2 = new Disease(5,"Lung cancer");
 		Disease onco4_1 = new Disease(6,"Breast cancer");
@@ -130,7 +153,9 @@ public class SymptomsMain {
 		Disease other1 = new Disease(0,"Unknown (not urgent)");
 		Disease other2 = new Disease(1,"Unknown (urgent)");
 		
-		
+		List<Disease> toxic_diseases = new ArrayList<>();
+		Disease tox1 = new Disease(0,"Food Poisoning");
+		Disease tox2 = new Disease(1,"Drugs");
 		//Include here more diseases in a lists of correspondent specialities
 
 		
@@ -138,29 +163,75 @@ public class SymptomsMain {
 		// NOW   --------->  CREATE LISTS OF SYMPTOMS (SYMPLIFY IT TO THE MAXIMUM)
 			
 		// CARDIOLOGY
-
-		String cardio_symp1 = "Chest pressure/Fatigue/Pain extends to the left arm/Disnea/Cold sweat";
+		
+		//HEART ATTACK
+		String cardio_symp1 = "Chest pressure/Fatigue/Pain extends to the left arm/Disnea/Cold sweat"; 
 		List<String> cardio_list_1 = Arrays.asList(cardio_symp1.split("/"));
 		List<String> cardio_symptoms_list1 =  new ArrayList<String>(cardio_list_1); 
 			// This allows to remove or add symptoms to the list of Strings (USEFUL FOR THE APPLICATION, NOT THE RULES)
 		
+		//HEART FAILURE
 		String cardio_symp2 = "Phlegm/Swelling/Faints/Fatigue/Heart palpitations";
 		List<String> cardio_list_2 = Arrays.asList(cardio_symp2.split("/"));
 		List<String> cardio_symptoms_list2 =  new ArrayList<String>(cardio_list_2); 
+		
+		String cardio_symp3 = "Swelling/Faints/Fatigue";
+		List<String> cardio_list_3 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_symptoms_list3 =  new ArrayList<String>(cardio_list_3); 
+		
+		//HIPERTENSIVE CRISIS
+		String cardio_symp4 = "Vomits/Pain/Disnea/Confusion";
+		List<String> cardio_list_4 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_symptoms_list4 =  new ArrayList<String>(cardio_list_4); 
+		
+		//ICTUS
+		String cardio_symp5 = "Sudden numbness/Paralysis/Confusion/Difficulty speaking or undestand/Loss of vision/Loss of balance /Pain";
+		List<String> cardio_list_5 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_symptoms_list5 =  new ArrayList<String>(cardio_list_5);
+		
+		//SYNCOPE
+		String cardio_symp6 = "Pale skin/Daze/Tunnel vision/Warmth sensation/Cold sweat";
+		List<String> cardio_list_6 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_symptoms_list6 =  new ArrayList<String>(cardio_list_6);
+	
 		
 		cardio1.setSymptomsList(cardio_symptoms_list1);
 			cardio_diseases.add(cardio1);
 		cardio2.setSymptomsList(cardio_symptoms_list2);
 			cardio_diseases.add(cardio2);
+		cardio3.setSymptomsList(cardio_symptoms_list3);
 			cardio_diseases.add(cardio3);
+		cardio4.setSymptomsList(cardio_symptoms_list4);
 			cardio_diseases.add(cardio4);
+		cardio5.setSymptomsList(cardio_symptoms_list5);
 			cardio_diseases.add(cardio5);
+		cardio6.setSymptomsList(cardio_symptoms_list6);
+			cardio_diseases.add(cardio6);
+		cardio7.setSymptomsList(cardio_symptoms_list6);
+			cardio_diseases.add(cardio7);
+			
+		sp1.setDisease_list(cardio_diseases);
 		
 		//sp1.getDisease_list().get(0);  //---> Corresponds to heart attack
 		
 		
 		// TOXICOLOGY
+		String tox_symp_1 = "Fever/Chills/Diarrhea/Pain/Nausea/Headache/Heart rate acceleration/Skin redness/Vomits/Paralysis";
+		List<String> tox_list_1 = Arrays.asList(tox_symp_1.split("/"));
+		List<String> tox_symptoms_list1 =  new ArrayList<String>(tox_list_1); 
+		
+		String tox_symp_2 = "Negative Mood/Vomits/Hyperactivity/Phlegmaticy/Reddened Sclera";
+		List<String> tox_list_2 = Arrays.asList(tox_symp_2.split("/"));
+		List<String> tox_symptoms_list2 =  new ArrayList<String>(tox_list_2); 
+		
+		
+		tox1.setSymptomsList(tox_symptoms_list1);
+			toxic_diseases.add(tox1);
+		tox2.setSymptomsList(tox_symptoms_list2);
+			toxic_diseases.add(tox2);
 
+		sp2.setDisease_list(toxic_diseases);
+			
 		// NEUROLOGY
 			
 			String neuro_symp1 = "Headache/Loss of vision/Loss of balance /Difficulty speaking or undestand/Leg or arm weakness";
@@ -302,9 +373,9 @@ public class SymptomsMain {
 		List<String> other_symptoms_list2 =  new ArrayList<String>(other_list_2); 
 		
 		other1.setSymptomsList(other_symptoms_list1);
-			other_diseases.add(cardio1);
+			other_diseases.add(other1);
 		other2.setSymptomsList(other_symptoms_list2);
-			other_diseases.add(cardio2);
+			other_diseases.add(other2);
 		
 		sp6.setDisease_list(other_diseases);
 		
@@ -320,13 +391,25 @@ public class SymptomsMain {
 		
 	// STEPS
 	// 1. WE SPECIFY THE SPECIALITY
+<<<<<<< HEAD
 		u.setSpecialty(sp3);
+=======
+		u.setSpecialty(sp2);
+>>>>>>> 281e2f23067a20aa6abb3b92b24d7c3b58f0b49b
 		
 	// 2. WE SPECIFY THE SYMPTOMS OF THIS CASE (NOT THE OVERALL FROM ABOVE)
 		// In this case I will choose the ones from 'onco_symptoms_list5_2' that correspond to index 9 of the disease_list
 		
+<<<<<<< HEAD
 		Disease select = sp3.getDisease_list().get(2);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
+=======
+		
+		Disease select = sp2.getDisease_list().get(0);  //We do this to only specify a single symptom list associated to 1 RULE and 1 DISEASE
+>>>>>>> 281e2f23067a20aa6abb3b92b24d7c3b58f0b49b
 		u.setDisease(select);
+		
+		
+		System.out.println("BEFORE\n" +  u);
 		
 		ksession.insert(u);
 		
