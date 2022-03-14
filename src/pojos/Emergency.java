@@ -1,4 +1,4 @@
-package drools.vehicles;
+package pojos;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class Emergency2 implements Serializable {
+public class Emergency implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -23,13 +23,13 @@ public class Emergency2 implements Serializable {
 	public Specialty specialty;
 	private Disease disease;
 	
-	public Emergency2() {
+	public Emergency() {
 		super();
 		this.date = setDate();
 		this.code = setCode();
 	}
 	
-	public Emergency2(Integer id) {
+	public Emergency(Integer id) {
 		super();
 		this.id = id;
 		this.date = setDate();
@@ -37,7 +37,7 @@ public class Emergency2 implements Serializable {
 	}
 	
 	
-	public Emergency2(Integer id, Integer code, String date, Integer severity) {
+	public Emergency(Integer id, Integer code, String date, Integer severity) {
 		super();
 		this.id = id;
 		this.code = code;
@@ -45,7 +45,7 @@ public class Emergency2 implements Serializable {
 		this.severity = severity;
 	}
 	
-	public Emergency2(Integer id, Patient patient) {
+	public Emergency(Integer id, Patient patient) {
 		super();
 		this.id = id;
 		this.date = setDate();
@@ -151,7 +151,7 @@ public class Emergency2 implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Emergency2 other = (Emergency2) obj;
+		Emergency other = (Emergency) obj;
 		return Objects.equals(id, other.id);
 	}
 

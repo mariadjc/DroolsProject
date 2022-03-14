@@ -8,6 +8,8 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
+import pojos.*;;
+
 public class SymptomsMain {
 	
 	public static void main(String[] args) {
@@ -490,8 +492,8 @@ public class SymptomsMain {
 		
 		ksession.insert(u);
 		
+		
 		ksession.fireAllRules();
-
 		System.out.println("AFTER\n" +  u);
 		
 		ksession.dispose();

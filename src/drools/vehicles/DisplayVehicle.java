@@ -4,6 +4,8 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
+import pojos.*;
+
 
 public class DisplayVehicle {
 
@@ -35,7 +37,7 @@ public class DisplayVehicle {
         Location w4 = new Location(3,"Mountain");
         Location w5 = new Location(4,"Beach");
          
-        Emergency2 u = new Emergency2();
+        Emergency u = new Emergency();
         
         /*
         Specialty sp5 = new Specialty(0,"Oncology");

@@ -1,4 +1,4 @@
-package drools.vehicles;
+package pojos;
 
 import java.io.Serializable;
 import java.util.Objects;

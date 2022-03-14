@@ -1,4 +1,4 @@
-package drools.symptoms;
+package pojos;
 
 import java.io.Serializable;
 import java.util.ArrayList;

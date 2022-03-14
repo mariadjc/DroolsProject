@@ -3,12 +3,16 @@
          xmlns="http://www.drools.org/xsd/kmodule">
    
 	  
-	  <kbase name="vehicles" packages="java.rules.application">
+	  <kbase name="vehicles" packages="java.rules.application.vehicles">
 	      <ksession name="vechicleKS"/>
 	  </kbase>
 	  
-	  <kbase name="symptom" packages="java.rules.application">
+	  <kbase name="symptom" packages="java.rules.application.symptoms">
 	      <ksession name="symptomsKS"/>
+	  </kbase>
+	  
+	  <kbase name="examp" packages="java.rules.application">
+	      <ksession name="exampKS"/>
 	  </kbase>
     
 </kmodule>
