@@ -62,7 +62,7 @@ public class examp {
 			diseases.add(d5);
 		sp1.setDisease_list(diseases);
 		
-		Protocol p1 = new Protocol(0,"Go to Urgencies unit for valoration",Protocol.Type.SHIPMENT);
+		Protocol p1 = new Protocol(0,"Go to Urgencies unit for valoration",Protocol.Type.ADVICE);
 		List<Protocol> protocol_list = new ArrayList<>();
 		protocol_list.add(p1);
 		u.setProtocol_list(protocol_list);
