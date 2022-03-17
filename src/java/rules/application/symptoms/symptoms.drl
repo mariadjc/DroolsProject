@@ -7,7 +7,8 @@ import pojos.Emergency;
 rule "other_unknown_light"
 	dialect "java"
 	when
-		u : Emergency (specialty.equals("Other") && specialty.getDisease_list().get(0).getDisease().equals("Unknown (not urgent)"))
+	    //u : Emergency (specialty.equals(5) && specialty.getDisease_list().get(0).getDisease().equals("Unknown (not urgent)"))
+		u : Emergency (specialty.getName().equalsIgnoreCase("Other"))
 	then
 		u.setSeverity(5);
 		u.setProtocol(u.getProtocol_list().get(2));
@@ -378,7 +379,7 @@ end
 rule "First Degree Sprain "
 	dialect "java"
 	when
-		u : Emergency (specialty.equals("Traumatology") && specialty.getDisease_list().get(5).getDisease().equals("First Degree Sprain ")
+		u : Emergency (specialty.equals("Traumatology") && specialty.getDisease_list().get(5).getDisease().equals("First Degree Sprain "))
 	then
 		u.setSeverity(2);
 		u.setProtocol(u.getProtocol_list().get(27));
@@ -447,7 +448,7 @@ end
 rule "Mild Head Trauma"
 	dialect "java"
 	when
-		u : Emergency (specialty.equals("Traumatology") && specialty.getDisease_list().get(12).getDisease().equals("Mild Head Trauma")
+		u : Emergency (specialty.equals("Traumatology") && specialty.getDisease_list().get(12).getDisease().equals("Mild Head Trauma"))
 	then
 		u.setSeverity(2);
 		u.setProtocol(u.getProtocol_list().get(30));
@@ -477,7 +478,7 @@ end
 rule "External Bleeding"
 	dialect "java"
 	when
-		u : Emergency (specialty.equals("Traumatology") && specialty.getDisease_list().get(15).getDisease().equals("External Bleeding")
+		u : Emergency (specialty.equals("Traumatology") && specialty.getDisease_list().get(15).getDisease().equals("External Bleeding"))
 	then
 		u.setSeverity(1);
 		u.setProtocol(u.getProtocol_list().get(32));

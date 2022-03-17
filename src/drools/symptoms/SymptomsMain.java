@@ -32,6 +32,10 @@ public class SymptomsMain {
 			p.setId(0);
 		u.setPatient(p);
 		
+		ksession.insert(u);
+		
+		
+		
 		/*
 		 * 
 		 * REMEMBER: The following objects in the App will be added automatically from Database
@@ -641,14 +645,16 @@ public class SymptomsMain {
 
 		u.setDisease(select);
 		
+		Emergency test = new Emergency(1,2,"oskdoks", 2);
+		test.setSpecialty(sp6);
 		
-		System.out.println("BEFORE\n" +  u);
+		System.out.println("BEFORE\n" +  test);
 		
-		ksession.insert(u);
+		ksession.insert(test);
 		
 		
 		ksession.fireAllRules();
-		System.out.println("AFTER\n" +  u);
+		System.out.println("AFTER\n" +  test);
 		
 		ksession.dispose();
 		
