@@ -38,23 +38,58 @@ public class SymptomsMain {
 		 * 
 		 * */
 		
-		Protocol p1 = new Protocol(0,"Go to Urgencies unit for valoration",Protocol.Type.SHIPMENT);
+		//OTHER
+		Protocol p1 = new Protocol(0,"Go to Urgencies unit for valoration",Protocol.Type.SHIPMENT); 
 		Protocol p2 = new Protocol(1,"Connect to oxygen supply",Protocol.Type.INPLACE);
+		
+		//ONCOLOGY
 		Protocol p3 = new Protocol(2,"Take paracetamol",Protocol.Type.ADVICE);
 		Protocol p4 = new Protocol(3,"Connect to oxygen supply + Inject subcutaneous antipyretic medication",Protocol.Type.SHIPMENT);
-		Protocol p5 = new Protocol(4,"Make appointment with doctor for further evaluation + Take medication and consider changes in status",Protocol.Type.ADVICE);
+		Protocol p5 = new Protocol(4,"Make appointment with doctor for further evaluation + Take medication and consider changes in status",Protocol.Type.ADVICE); //OTHER
 		Protocol p6 = new Protocol(5,"Connect catheter + intravenous antifluid and pain medicaments",Protocol.Type.INPLACE);
+		
+		//TOXICOLOGY
 		Protocol p7 = new Protocol(6, "Connect to oxygen supply + Control vomits + If the person begins to have seizures, administer first aid for these cases",Protocol.Type.SHIPMENT);
-		Protocol p8 = new Protocol(7, "Measure constants +  Nitroglicerine + Reanimation", Protocol.Type.SHIPMENT); // heart attack
-		Protocol p9 = new Protocol(8, "Measure constants +  Oxygen + Diuretics", Protocol.Type.SHIPMENT); // heart failure severe
-		Protocol p10 = new Protocol(9, "Measure constants +  Oxygen", Protocol.Type.INPLACE); // heart failure light
-		Protocol p11 = new Protocol(10, "Tension measure + calm the pacient + hipotensive drug", Protocol.Type.INPLACE); // hipertensive crisis
-		Protocol p12 = new Protocol(11, "Head elevation + ECG + Tension measure + Neuroprotector drugs", Protocol.Type.SHIPMENT); // ictus
-		Protocol p13 = new Protocol(12, "Leg lift + Hydration + ECG + Recommend to make appointment with doctor for further evaluation", Protocol.Type.INPLACE); // syncope
-		Protocol p14 = new Protocol(13,"Keep the person comfortable + Give water + Ensure access to fresh air + Try to make the person calm", Protocol.Type.ADVICE);
-		Protocol p15 = new Protocol(14,"Make space among person + Clear hard or sharp objects + Don't try to stop the movements + Place the person on side to clear to airways", Protocol.Type.INPLACE);
-		Protocol p16 = new Protocol(15,"The fastest way to hospital", Protocol.Type.SHIPMENT);
-		Protocol p17 = new Protocol(13, "Leg lift + Hydration", Protocol.Type.ADVICE); // syncope
+		Protocol p8 = new Protocol(7, "Examine and monitor the person's airway, breathing, and pulse. Start artificial respiration and CPR, if necessary.",Protocol.Type.INPLACE);
+		Protocol p9 = new Protocol(8, "If the person vomits, clear the airways + Wrap a piece of cloth around your fingers before cleaning your mouth and throat + DO NOT make the person vomit (only if indicated) + Keep the person comfortable. Turn onto her left side.",Protocol.Type.ADVICE);
+		Protocol p10 = new Protocol(9, "Apply cold to the affected zone + Quick transportation to hospital",Protocol.Type.SHIPMENT);
+		
+		//TRAUMATOLOGY
+		Protocol p11 = new Protocol(10, "Go to Urgencies unit for valoration + Possible surgery intervention or limb immobilization",Protocol.Type.ADVICE);
+		Protocol p12 = new Protocol(11, "Keep the person comfortable + Turn her onto her left side and stay there while you get or wait for medical help",Protocol.Type.ADVICE);
+		Protocol p13 = new Protocol(12, "Apply burn ointment and cold in the affected area",Protocol.Type.ADVICE);
+		
+		
+		//NEUROLOGY
+		Protocol p14 = new Protocol(13,"Keep the person comfortable + Give water + Ensure access to fresh air + Try to make the person calm", Protocol.Type.ADVICE); //ptsd, migraine
+		Protocol p15 = new Protocol(14,"Make space among person + Clear hard or sharp objects + Don't try to stop the movements + Place the person on side to clear to airways", Protocol.Type.INPLACE);//epilepsy
+		Protocol p16 = new Protocol(15,"The fastest way to hospital", Protocol.Type.SHIPMENT);//meningities, stroke
+		
+		//TRAUMA2
+		
+		Protocol p17 = new Protocol(16,"Surgery intervention valoration if the affection is deep + Avoid touching the affected zone + Apply cold", Protocol.Type.SHIPMENT);
+		Protocol p18 = new Protocol(17,"Do not move the limb until a professional arrives + Clean and cover wounds + Apply cold + Bone repositioning by experts + immobilization + Evaluation if possible surgery (arthroscopy or open surgery).", Protocol.Type.INPLACE);
+		
+		// CARDIOLOGY
+		Protocol p19 = new Protocol(18, "Measure constants +  Nitroglicerine + Reanimation", Protocol.Type.SHIPMENT); // heart attack
+		Protocol p20 = new Protocol(19, "Measure constants +  Oxygen + Diuretics", Protocol.Type.SHIPMENT); // heart failure severe
+		Protocol p21 = new Protocol(20, "Measure constants +  Oxygen", Protocol.Type.INPLACE); // heart failure light
+		Protocol p22 = new Protocol(21, "Tension measure + calm the pacient + hipotensive drug", Protocol.Type.INPLACE); // hipertensive crisis
+		Protocol p23 = new Protocol(22, "Head elevation + ECG + Tension measure + Neuroprotector drugs", Protocol.Type.SHIPMENT); // ictus
+		Protocol p24 = new Protocol(23, "Leg lift + Hydration", Protocol.Type.ADVICE); // syncope 
+		Protocol p25 = new Protocol(24, "Leg lift + Hydration + ECG + Recommend to make appointment with doctor for further evaluation", Protocol.Type.INPLACE); // syncope old people
+	
+		//TRAUMA3
+		Protocol p26 = new Protocol(25,"Apl Apply cold to the affected zone + ointment if needed + and avoid infecttions", Protocol.Type.ADVICE);
+		Protocol p27 = new Protocol(26,"Do not move the limb + clean and cover wounds + cold +repositioning the bone by experts + anti-inflammatories", Protocol.Type.ADVICE);
+		Protocol p28 = new Protocol(27,"Rest + Elevation of the limb + gentle stretching + cold + bandage + compression", Protocol.Type.SHIPMENT);
+		Protocol p29 = new Protocol(28,"Do not move the limb + clean and cover wounds + cold + repositioning of the bone by experts + immobilization and rehabilitation + anti-inflammatories +You may need surgery (Arthoscopy or open surgery) +  possible use of splint", Protocol.Type.SHIPMENT);
+		Protocol p30 = new Protocol(29,"Immobilization  + casting", Protocol.Type.SHIPMENT);
+		Protocol p31 = new Protocol(30,"Urgently transfer to the nearest hospital + avoid suffocation + assisted respiration if needed + surgery", Protocol.Type.SHIPMENT);
+		Protocol p32 = new Protocol(31,"Immobilization of the area + oxygenation maintenance + surgical stabilization + symptomatic care + prevent secondary injuries + maintain high blood pressure + corticosteroids + analgesics", Protocol.Type.SHIPMENT);
+		Protocol p33 = new Protocol(32,"Direct compression + when bleeding stops bandage + elevate affected part + tourniquet + cauterization of the wound", Protocol.Type.SHIPMENT);
+		Protocol p34 = new Protocol(33,"Apply cold + see if the abdomen is rigid or tender + stop bleeding + transfer quickly to the nearest hospital + surgery", Protocol.Type.SHIPMENT);
+		
 
 		// p17 has same index as p14 -----> CHANGE THIS
 		
@@ -84,13 +119,30 @@ public class SymptomsMain {
 		protocol_list.add(p15);
 		protocol_list.add(p16);
 		protocol_list.add(p17);
+		protocol_list.add(p18);
+		protocol_list.add(p19);
+		protocol_list.add(p20);
+		protocol_list.add(p21);
+		protocol_list.add(p22);
+		protocol_list.add(p23);
+		protocol_list.add(p24);
+		protocol_list.add(p25);
+		protocol_list.add(p26);
+		protocol_list.add(p27);
+		protocol_list.add(p28);
+		protocol_list.add(p29);
+		protocol_list.add(p30);
+		protocol_list.add(p31);
+		protocol_list.add(p32);
+		protocol_list.add(p33);
+		protocol_list.add(p34);
 		
 
 		
 		u.setProtocol_list(protocol_list);
 
 		
-		
+		//LOCATIONS
 		
 		Location w1 = new Location(0,"Home");
         Location w2 = new Location(1,"Transit");
@@ -99,6 +151,7 @@ public class SymptomsMain {
         Location w5 = new Location(4,"Beach");
         u.setLocation(w5);
 		
+        //SPECIALITIES
 		Specialty sp1 = new Specialty(0,"Cardiology");
 		Specialty sp2 = new Specialty(1,"Toxicology");
 		Specialty sp3 = new Specialty(2,"Neurology");
@@ -106,6 +159,15 @@ public class SymptomsMain {
 		Specialty sp5 = new Specialty(4,"Oncology");
 		Specialty sp6 = new Specialty(5,"Other");   // Esta es a�n cuestionable
 		
+		// DISEASES
+		
+		
+		// OTHER
+		List<Disease> other_diseases = new ArrayList<>();
+		Disease other1 = new Disease(0,"Unknown (not urgent)");
+		Disease other2 = new Disease(1,"Unknown (urgent)");
+		
+		// CARDIO
 		List<Disease> cardio_diseases = new ArrayList<>();
 		Disease cardio1 = new Disease(0,"Heart attack");
 		Disease cardio2 = new Disease(1,"Heart failure");
@@ -117,6 +179,8 @@ public class SymptomsMain {
 		
 		
 	// Several cases for same Disease because some symptoms differ
+		
+		// ONCO
 		List<Disease> onco_diseases = new ArrayList<>();
 		Disease onco1_1 = new Disease(0,"Colon cancer");
 		Disease onco1_2 = new Disease(1,"Colon cancer");
@@ -130,52 +194,48 @@ public class SymptomsMain {
 		Disease onco5_2= new Disease(9,"Leukemia");
 		
 		
-		// Neurology diseases
+		// NEURO
 		List<Disease> neuro_diseases = new ArrayList<>();
-		Disease neuro1_1 = new Disease(0, "Stroke");
-		Disease neuro2_1 = new Disease(1, "Epilepsy");
-		Disease neuro2_2 = new Disease(2,"Epilepsy");
-		Disease neuro2_3 = new Disease(3,"Epilepsy");
-		
-		Disease neuro3_1 = new Disease(4,"Migraine");
-		Disease neuro3_2 = new Disease(5,"Migraine");
-		Disease neuro4_1 = new Disease(6,"Ptsd");
-		Disease neuro5_1 = new Disease(7, "Meningities");
+		Disease neuro1 = new Disease(0, "Stroke");
+		Disease neuro2 = new Disease(1, "Epilepsy");
+		Disease neuro3 = new Disease(2,"Migraine");
+		Disease neuro4 = new Disease(3,"Ptsd");
+		Disease neuro5 = new Disease(4, "Meningities");
 		
 		
-		
+		// TOXIC
 		List<Disease> toxic_diseases = new ArrayList<>();
-		Disease tox1_1 = new Disease(0,"Food poisoning");
-		Disease tox1_2 = new Disease(1,"Food poisoning");
-		Disease tox1_3 = new Disease(2,"Food poisoning");
-		Disease tox1_4 = new Disease(3,"Food poisoning");
-		Disease tox1_5 = new Disease(4,"Food poisoning");
-		Disease tox1_6 = new Disease(5,"Food poisoning");
-		Disease tox1_7 = new Disease(6,"Food poisoning");
-		Disease tox2_1 = new Disease(7,"Drugs");
-		Disease tox2_2 = new Disease(8,"Drugs");
-		Disease tox3_1 = new Disease(9,"Hangover");
-		Disease tox3_2 = new Disease(10,"Hangover");
-		Disease tox3_3 = new Disease(11,"Hangover");
-		Disease tox3_4 = new Disease(12,"Hangover");
-		Disease tox4_1 = new Disease(13,"Allergies for medicamente");
-		Disease tox4_2 = new Disease(14,"Allergies for medicamente");
-		Disease tox4_3 = new Disease(15,"Allergies for medicamente");
-		Disease tox4_4 = new Disease(16,"Allergies for medicamente");
-		Disease tox4_5 = new Disease(17,"Allergies for medicamente");
-		Disease tox4_6 = new Disease(18,"Allergies for medicamente");
-		Disease tox4_7 = new Disease(19,"Allergies for medicamente");
-		Disease tox4_8 = new Disease(20,"Allergies for medicamente");
-		Disease tox4_9 = new Disease(21,"Allergies for medicamente");
-		Disease tox4_10 = new Disease(22,"Allergies for medicamente");
-		Disease tox4_11 = new Disease(23,"Allergies for medicamente");
-		Disease tox4_12 = new Disease(24,"Allergies for medicamente");
-		Disease tox4_13 = new Disease(25,"Allergies for medicamente");
+		Disease tox1 = new Disease(0,"Food poisoning");
+		Disease tox2 = new Disease(1,"Drugs");
+		Disease tox3 = new Disease(2,"Hangover");
+		Disease tox4 = new Disease(3,"Medicament allergy");
+		
+		//TRAUMA
+		List<Disease> traum_diseases = new ArrayList<>();
+		Disease traum1 = new Disease(0,"First Degree Burn");
+		Disease traum2 = new Disease(1,"Second Degree Burn");
+		Disease traum3 = new Disease(2,"Third Degree Burn");
+		Disease traum4 = new Disease(3,"Acute Dislocation");
+		Disease traum5 = new Disease(4,"Chronic Dislocation");
+		Disease traum6 = new Disease(5,"First Degree Sprain");
+		Disease traum7 = new Disease(6,"Second Degree Sprain");				
+		Disease traum8 = new Disease(7,"Third Degree Sprain");
+		Disease traum9 = new Disease(8,"Complete Fracture");
+		Disease traum10 = new Disease(9,"Green Stem Fracture");
+		Disease traum11 = new Disease(10,"Comminuted Fracture");
+		Disease traum12 = new Disease(11,"Open Fracture");
+		Disease traum13 = new Disease(12,"Mild Head Trauma");
+		Disease traum14 = new Disease(13,"Complete Spinal Cord Injury");
+		Disease traum15 = new Disease(14,"Internal Bleeding");
+		Disease traum16 = new Disease(15,"External Bleeding");
+		Disease traum17 = new Disease(16,"Venous Hemorrhage");
+		Disease traum18 = new Disease(17,"Arterial Bleeding");
+		Disease traum19 = new Disease(18,"First Degree Bruise");				
+		Disease traum20 = new Disease(19,"Second Degree Bruise");
+		Disease traum21 = new Disease(20,"Third Degree Bruise");
 		
 		
-		List<Disease> other_diseases = new ArrayList<>();
-		Disease other1 = new Disease(0,"Unknown (not urgent)");
-		Disease other2 = new Disease(1,"Unknown (urgent)");
+		
 		
 		//Include here more diseases in a lists of correspondent specialities
 
@@ -259,59 +319,14 @@ public class SymptomsMain {
 		List<String> tox_symptoms_list4 = new ArrayList<String>(tox_list_4);
 
 		
-		tox1_1.setSymptomsList(tox_symptoms_list1);
-		toxic_diseases.add(tox1_1);
-		tox1_2.setSymptomsList(tox_symptoms_list1);
-		toxic_diseases.add(tox1_2);
-		tox1_3.setSymptomsList(tox_symptoms_list1);
-		toxic_diseases.add(tox1_3);
-		tox1_4.setSymptomsList(tox_symptoms_list1);
-		toxic_diseases.add(tox1_4);
-		tox1_5.setSymptomsList(tox_symptoms_list1);
-		toxic_diseases.add(tox1_5);
-		tox1_6.setSymptomsList(tox_symptoms_list1);
-		toxic_diseases.add(tox1_6);
-		tox1_7.setSymptomsList(tox_symptoms_list1);
-		toxic_diseases.add(tox1_7);
-		tox2_1.setSymptomsList(tox_symptoms_list2);
-		toxic_diseases.add(tox2_1);
-		tox2_2.setSymptomsList(tox_symptoms_list2);
-		toxic_diseases.add(tox2_2);
-		tox3_1.setSymptomsList(tox_symptoms_list3);
-		toxic_diseases.add(tox3_1);
-		tox3_2.setSymptomsList(tox_symptoms_list3);
-		toxic_diseases.add(tox3_2);
-		tox3_3.setSymptomsList(tox_symptoms_list3);
-		toxic_diseases.add(tox3_3);
-		tox3_4.setSymptomsList(tox_symptoms_list3);
-		toxic_diseases.add(tox3_4);
-		tox4_1.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_1);
-		tox4_2.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_2);
-		tox4_3.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_3);
-		tox4_4.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_4);
-		tox4_5.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_5);
-		tox4_6.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_6);
-		tox4_7.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_7);
-		tox4_8.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_8);
-		tox4_9.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_9);
-		tox4_10.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_10);
-		tox4_11.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_11);
-		tox4_12.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_12);
-		tox4_13.setSymptomsList(tox_symptoms_list4);
-		toxic_diseases.add(tox4_13);
-	
+		tox1.setSymptomsList(tox_symptoms_list1);
+		toxic_diseases.add(tox1);
+		tox2.setSymptomsList(tox_symptoms_list2);
+		toxic_diseases.add(tox2);
+		tox3.setSymptomsList(tox_symptoms_list3);
+		toxic_diseases.add(tox3);
+		tox4.setSymptomsList(tox_symptoms_list4);
+		toxic_diseases.add(tox4);
 
 		sp2.setDisease_list(toxic_diseases);
 			
@@ -340,29 +355,17 @@ public class SymptomsMain {
 			List<String> neuro_list_5 = Arrays.asList(neuro_symp5.split("/"));
 			List<String> neuro_symptoms_list5 =  new ArrayList<String>(neuro_list_5);
 			
-			neuro1_1.setSymptomsList(neuro_symptoms_list1);
-			neuro_diseases.add(neuro1_1);
 			
-			neuro2_1.setSymptomsList(neuro_symptoms_list2);
-			neuro_diseases.add(neuro2_1);
-			
-			neuro2_2.setSymptomsList(neuro_symptoms_list2);
-			neuro_diseases.add(neuro2_2);
-			
-			neuro2_3.setSymptomsList(neuro_symptoms_list2);
-			neuro_diseases.add(neuro2_3);
-			
-			neuro3_1.setSymptomsList(neuro_symptoms_list3);
-			neuro_diseases.add(neuro3_1);
-			
-			neuro3_2.setSymptomsList(neuro_symptoms_list3);
-			neuro_diseases.add(neuro3_2);
-			
-			neuro4_1.setSymptomsList(neuro_symptoms_list4);
-			neuro_diseases.add(neuro4_1);
-			
-			neuro5_1.setSymptomsList(neuro_symptoms_list5);
-			neuro_diseases.add(neuro5_1);
+			neuro1.setSymptomsList(neuro_symptoms_list1);
+			neuro_diseases.add(neuro1);
+			neuro2.setSymptomsList(neuro_symptoms_list2);
+			neuro_diseases.add(neuro2);
+			neuro3.setSymptomsList(neuro_symptoms_list3);
+			neuro_diseases.add(neuro3);
+			neuro4.setSymptomsList(neuro_symptoms_list4);
+			neuro_diseases.add(neuro4);
+			neuro5.setSymptomsList(neuro_symptoms_list5);
+			neuro_diseases.add(neuro5);
 			
 			sp3.setDisease_list(neuro_diseases);
 			
@@ -443,6 +446,157 @@ public class SymptomsMain {
 			
 		sp5.setDisease_list(onco_diseases);
 				
+		
+		//TRAUMATOLOGY
+			// ---------> First Degree Burn
+		String traum_symp1 = "Afect Epidermis/ Pain on Contact / Hypersensitivity / Redness of the skin / Inflammation";
+		List<String> traum_list_1 = Arrays.asList(traum_symp1.split("/"));
+		List<String> traum_symptoms_list1 =  new ArrayList<String>(traum_list_1);
+
+			// ---------> Second Degree Burn
+		String traum_symp2 = "Afect Epidermis and Dermis / Intense Pain / Touch hyperesthesia / Inflammation / Red dotted on off-white background / Blisters";
+		List<String> traum_list_2 = Arrays.asList(traum_symp2.split("/"));
+		List<String> traum_symptoms_list2 =  new ArrayList<String>(traum_list_2);
+
+			// ---------> Third Degree Burn
+		String traum_symp3 = "Deep Dermis / Organs and nerves affected / Dry and hard skin / White / Do not fell pain";
+		List<String> traum_list_3 = Arrays.asList(traum_symp3.split("/"));
+		List<String> traum_symptoms_list3 =  new ArrayList<String>(traum_list_3);
+
+			// ---------> Acute Dislocation
+		String traum_symp4 = "Dislodged joint / First time / After Trauma";
+		List<String> traum_list_4 = Arrays.asList(traum_symp4.split("/"));
+		List<String> traum_symptoms_list4 =  new ArrayList<String>(traum_list_4);
+
+			// ---------> Chronic Dislocation
+		String traum_symp5 = "Dislodged joint / Degradation of the soft joint parts / Difficulty to mantain bone in place / Chronic conditions";
+		List<String> traum_list_5 = Arrays.asList(traum_symp5.split("/"));
+		List<String> traum_symptoms_list5 =  new ArrayList<String>(traum_list_5);
+
+			// ---------> First Degree Sprain
+		String traum_symp6 = "Ligament not broken / Pain / Inflammation / Limited movement / Instability";
+		List<String> traum_list_6 = Arrays.asList(traum_symp6.split("/"));
+		List<String> traum_symptoms_list6 =  new ArrayList<String>(traum_list_6);
+
+			// ---------> Second Degree Sprain
+		String traum_symp7 = "Parcial broken Ligament / Pain / Inflammation / Limited movement / Instability / Hematoma";
+		List<String> traum_list_7 = Arrays.asList(traum_symp7.split("/"));
+		List<String> traum_symptoms_list7 =  new ArrayList<String>(traum_list_7);
+
+			// ---------> Third Degree Sprain
+		String traum_symp8 = "Broken Ligament / Pain / Inflammation / Limited movement / Instability / Hematoma";
+		List<String> traum_list_8 = Arrays.asList(traum_symp8.split("/"));
+		List<String> traum_symptoms_list8 =  new ArrayList<String>(traum_list_8);
+
+			// ---------> Complete Fracture
+		String traum_symp9 = "Bone broken in two / Deformation of the area / Inflammation/ Hematoma / Incapacitty of movement / Desorientation / Loss of consciousness / numbness / tingle / Pain";
+		List<String> traum_list_9 = Arrays.asList(traum_symp9.split("/"));
+		List<String> traum_symptoms_list9 =  new ArrayList<String>(traum_list_9);
+
+			// ---------> Green Stem Fracture
+		String traum_symp10 = "Fractured bone / Inflammation/ Hematoma / Incapacitty of movement / Desorientation / Loss of consciousness / numbness / tingle / Pain";
+		List<String> traum_list_10 = Arrays.asList(traum_symp10.split("/"));
+		List<String> traum_symptoms_list10 =  new ArrayList<String>(traum_list_10);
+
+			// ---------> Comminuted Fracture
+		String traum_symp11 = "Fractured bone in more than 1 area / Inflammation/ Hematoma / Incapacitty of movement / Desorientation / Loss of consciousness / numbness / tingle / Pain";
+		List<String> traum_list_11 = Arrays.asList(traum_symp11.split("/"));
+		List<String> traum_symptoms_list11 =  new ArrayList<String>(traum_list_11);
+
+			// ---------> Open Fracture
+		String traum_symp12 = "Broken skin / Bleed / Fractured bone/ Inflammation/ Hematoma / Incapacitty of movement / Desorientation / Loss of consciousness / numbness / tingle / Pain";
+		List<String> traum_list_12 = Arrays.asList(traum_symp12.split("/"));
+		List<String> traum_symptoms_list12 =  new ArrayList<String>(traum_list_12);
+
+			// ---------> Mild Head Trauma
+		String traum_symp13 = "Head pain / Loss of consciousness < 30min/ Seizures / Pupil dilation / Confusion / React to stimulous / Able to move / Ringing in the ears / Memory impairment / Blurred vision / Behavior change / difficulty moving";
+		List<String> traum_list_13 = Arrays.asList(traum_symp13.split("/"));
+		List<String> traum_symptoms_list13 =  new ArrayList<String>(traum_list_13);
+
+			// ---------> Complete Spinal Cord Injury
+		String traum_symp14 = "Paralysis / Lose of musscle tone / loss of sensivility / Automatic dysfunction below affected area";
+		List<String> traum_list_14 = Arrays.asList(traum_symp14.split("/"));
+		List<String> traum_symptoms_list14 =  new ArrayList<String>(traum_list_14);
+
+			// ---------> Internal Bleeding
+		String traum_symp15 = "Internal damaged organs and vessels";
+		List<String> traum_list_15 = Arrays.asList(traum_symp15.split("/"));
+		List<String> traum_symptoms_list15 =  new ArrayList<String>(traum_list_15);
+
+			// ---------> External Bleeding
+		String traum_symp16 = "Syncope / hypovolemic shock / Anemia";
+		List<String> traum_list_16 = Arrays.asList(traum_symp16.split("/"));
+		List<String> traum_symptoms_list16 =  new ArrayList<String>(traum_list_16);
+
+			// ---------> External Bleeding
+        String traum_symp17 = "Dark red blood / easier to control than arterial ones / Dizziness / lightheadedness / extreme paleness / bleeding from the mouth or rectum";
+        List<String> traum_list_17 = Arrays.asList(traum_symp17.split("/"));
+        List<String> traum_symptoms_list17 =  new ArrayList<String>(traum_list_17);
+
+			// ---------> Arterial Bleeding
+        String traum_symp18 = "Abundant and intermittent discharge of blood brigth red / Dizziness / lightheadedness / extreme paleness / bleeding from the mouth or rectum";
+        List<String> traum_list_18 = Arrays.asList(traum_symp18.split("/"));
+        List<String> traum_symptoms_list18 =  new ArrayList<String>(traum_list_18);
+
+			// ---------> First Degree Bruise
+		String traum_symp19 = "Ecchymosis / Redness of the skin / Moderated pain / Inflammation / Hematoma / Not broken skin";
+		List<String> traum_list_19 = Arrays.asList(traum_symp19.split("/"));
+		List<String> traum_symptoms_list19 =  new ArrayList<String>(traum_list_19);
+
+			// ---------> Second Degree Bruise
+		String traum_symp20 = "Blood extravasation / Ecchymosis / Redness of the skin / Moderated pain / Inflammation / Hematoma / Not broken skin";
+		List<String> traum_list_20 = Arrays.asList(traum_symp20.split("/"));
+		List<String> traum_symptoms_list20 =  new ArrayList<String>(traum_list_20);
+
+			// ---------> Third Degree Bruise
+		String traum_symp21 = "Deep Organ and Tissues damage / Fractured / Broken larger vessels / Blood extravasation / Ecchymosis / Redness of the skin / Several pain / Inflammation / Hematoma / Not broken skin";
+		List<String> traum_list_21 = Arrays.asList(traum_symp21.split("/"));
+		List<String> traum_symptoms_list21 =  new ArrayList<String>(traum_list_21);
+
+		traum1.setSymptomsList(traum_symptoms_list1);
+		traum_diseases.add(traum1);
+		traum2.setSymptomsList(traum_symptoms_list2);
+		traum_diseases.add(traum2);
+		traum3.setSymptomsList(traum_symptoms_list3);
+		traum_diseases.add(traum3);
+		traum4.setSymptomsList(traum_symptoms_list4);
+		traum_diseases.add(traum4);
+		traum5.setSymptomsList(traum_symptoms_list5);
+		traum_diseases.add(traum5);
+		traum6.setSymptomsList(traum_symptoms_list6);
+		traum_diseases.add(traum6);
+		traum7.setSymptomsList(traum_symptoms_list7);
+		traum_diseases.add(traum7);
+		traum8.setSymptomsList(traum_symptoms_list8);
+		traum_diseases.add(traum8);
+		traum9.setSymptomsList(traum_symptoms_list9);
+		traum_diseases.add(traum9);
+		traum10.setSymptomsList(traum_symptoms_list10);
+		traum_diseases.add(traum10);
+		traum11.setSymptomsList(traum_symptoms_list11);
+		traum_diseases.add(traum11);
+		traum12.setSymptomsList(traum_symptoms_list12);
+		traum_diseases.add(traum12);
+		traum13.setSymptomsList(traum_symptoms_list13);
+		traum_diseases.add(traum13);
+		traum14.setSymptomsList(traum_symptoms_list14);
+		traum_diseases.add(traum14);
+		traum15.setSymptomsList(traum_symptoms_list15);
+		traum_diseases.add(traum15);
+		traum16.setSymptomsList(traum_symptoms_list16);
+		traum_diseases.add(traum16);
+		traum17.setSymptomsList(traum_symptoms_list17);
+		traum_diseases.add(traum17);
+		traum18.setSymptomsList(traum_symptoms_list18);
+		traum_diseases.add(traum18);
+		traum19.setSymptomsList(traum_symptoms_list19);
+		traum_diseases.add(traum19);
+		traum20.setSymptomsList(traum_symptoms_list20);
+		traum_diseases.add(traum20);
+		traum21.setSymptomsList(traum_symptoms_list21);
+		traum_diseases.add(traum21);
+
+		sp4.setDisease_list(traum_diseases);
 		
 		
 		// OTHER
