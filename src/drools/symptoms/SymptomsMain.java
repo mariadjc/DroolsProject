@@ -32,6 +32,10 @@ public class SymptomsMain {
 			p.setId(0);
 		u.setPatient(p);
 		
+		ksession.insert(u);
+		
+		
+		
 		/*
 		 * 
 		 * REMEMBER: The following objects in the App will be added automatically from Database
@@ -257,22 +261,22 @@ public class SymptomsMain {
 		List<String> cardio_symptoms_list2 =  new ArrayList<String>(cardio_list_2); 
 		
 		String cardio_symp3 = "Swelling/Faints/Fatigue";
-		List<String> cardio_list_3 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_list_3 = Arrays.asList(cardio_symp3.split("/"));
 		List<String> cardio_symptoms_list3 =  new ArrayList<String>(cardio_list_3); 
 		
 		//HIPERTENSIVE CRISIS
 		String cardio_symp4 = "Vomits/Pain/Disnea/Confusion";
-		List<String> cardio_list_4 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_list_4 = Arrays.asList(cardio_symp4.split("/"));
 		List<String> cardio_symptoms_list4 =  new ArrayList<String>(cardio_list_4); 
 		
 		//ICTUS
 		String cardio_symp5 = "Sudden numbness/Paralysis/Confusion/Difficulty speaking or undestand/Loss of vision/Loss of balance /Pain";
-		List<String> cardio_list_5 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_list_5 = Arrays.asList(cardio_symp5.split("/"));
 		List<String> cardio_symptoms_list5 =  new ArrayList<String>(cardio_list_5);
 		
 		//SYNCOPE
 		String cardio_symp6 = "Pale skin/Daze/Tunnel vision/Warmth sensation/Cold sweat";
-		List<String> cardio_list_6 = Arrays.asList(cardio_symp2.split("/"));
+		List<String> cardio_list_6 = Arrays.asList(cardio_symp6.split("/"));
 		List<String> cardio_symptoms_list6 =  new ArrayList<String>(cardio_list_6);
 	
 		
@@ -641,14 +645,16 @@ public class SymptomsMain {
 
 		u.setDisease(select);
 		
+		Emergency test = new Emergency(1,2,"oskdoks", 2);
+		test.setSpecialty(sp6);
 		
-		System.out.println("BEFORE\n" +  u);
+		System.out.println("BEFORE\n" +  test);
 		
-		ksession.insert(u);
+		ksession.insert(test);
 		
 		
 		ksession.fireAllRules();
-		System.out.println("AFTER\n" +  u);
+		System.out.println("AFTER\n" +  test);
 		
 		ksession.dispose();
 		
